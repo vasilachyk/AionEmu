@@ -1,0 +1,22 @@
+10:55:16.492 INFO [main]: org.quartz.impl.StdSchedulerFactory [StdSchedulerFactory.java:1175] - Using default implementation for ThreadExecutor
+10:55:16.553 INFO [main]: org.quartz.core.SchedulerSignalerImpl [SchedulerSignalerImpl.java:61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+10:55:16.555 INFO [main]: org.quartz.core.QuartzScheduler [QuartzScheduler.java:243] - Quartz Scheduler v.2.1.7 created.
+10:55:16.599 INFO [main]: org.quartz.simpl.RAMJobStore [RAMJobStore.java:154] - RAMJobStore initialized.
+10:55:16.600 INFO [main]: org.quartz.core.QuartzScheduler [QuartzScheduler.java:268] - Scheduler meta-data: Quartz Scheduler (v2.1.7) 'QuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 1 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+10:55:16.601 INFO [main]: org.quartz.impl.StdSchedulerFactory [StdSchedulerFactory.java:1324] - Quartz scheduler 'QuartzScheduler' initialized from an externally provided properties instance.
+10:55:16.602 INFO [main]: org.quartz.impl.StdSchedulerFactory [StdSchedulerFactory.java:1328] - Quartz scheduler version: 2.1.7
+10:55:16.602 INFO [main]: org.quartz.core.QuartzScheduler [QuartzScheduler.java:534] - Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+10:55:16.603 INFO [main]: com.aionemu.loginserver.LoginServer [LoginServer.java:119] - 2017-08-11 10-55-16
+10:55:16.604 INFO [main]: com.aionemu.loginserver.configs.Config [Config.java:125] - Loading: myls.properties
+10:55:16.618 INFO [main]: com.aionemu.loginserver.configs.Config [Config.java:128] - No override properties found
+10:55:16.646 INFO [main]: com.aionemu.loginserver.configs.Config [Config.java:134] - Loading: ./config/network/network.properties
+10:55:16.681 INFO [main]: com.aionemu.loginserver.configs.Config [Config.java:136] - Loading: ./config/network/svstats.properties
+10:55:16.683 INFO [main]: com.aionemu.loginserver.configs.Config [Config.java:138] - Loading: ./config/network/commons.properties
+10:55:16.684 INFO [main]: com.aionemu.loginserver.configs.Config [Config.java:140] - Loading: ./config/network/database.properties
