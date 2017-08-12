@@ -1,19 +1,19 @@
-# Game Working:
+## Game Working:
 * Website: http://aionunity.com
 
-# AionUnity 5.1 TODO List
+### AionUnity 5.1 TODO List
 
-# High Priority:
+### High Priority:
 * Note:
   - None
 
-# Middle Priority:
+### Middle Priority:
 * Not Yet
 
-# Low Priority:
+### Low Priority:
 * Not Yet
 
-# Emulator Features:
+### Emulator Features:
 * Stigma System 
 * Conquerer/Protector System
 * High Daeva System
@@ -23,7 +23,7 @@
 * Magic Morph System
 * Bonus buff fully working like a legion buff etc
 * Etc
-# Custom Features:
+### Custom Features:
 * FFA System
 * BG/Battleground System
 * PK bandit System
@@ -33,7 +33,7 @@
 * F2f Membership System
 * Wedding System (nick love nick)
 * Etc
-# New Instance working:
+### New Instance working:
 * Library of Knowledge
 * Garden of Knowledge
 * Rift of Oblivion
@@ -42,6 +42,6 @@
 * Kroban Base
 * Drakenseers Lair
 * Fire Temple of Memory
-# New Zones :
+### New Zones :
 * Esterra
 * Nosra
