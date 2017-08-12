@@ -16,7 +16,6 @@
  */
 package quest.poeta;
 
-import com.aionemu.gameserver.model.TeleportAnimation;
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.questEngine.QuestEngine;
@@ -25,7 +24,6 @@ import com.aionemu.gameserver.questEngine.model.QuestDialog;
 import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
-import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
 /****/
@@ -75,7 +73,6 @@ public class _1100Kalios_Call extends QuestHandler
 			}
 			return sendQuestEndDialog(env);
 		}
-		TeleportService2.teleportTo(player, 110010000, 1463.987f, 1430.4983f, 572.8723f, (byte) 54, TeleportAnimation.FIRE_ANIMATION);
 		return false;
 	}
 	

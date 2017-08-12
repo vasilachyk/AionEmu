@@ -94,7 +94,6 @@ public class _10520Covert_Communiques extends QuestHandler
 							return sendQuestDialog(env, 1353);
 						}
 					} case STEP_TO_1: {
-						TeleportService2.teleportTo(player, 110010000, 1330f, 1511f, 569.03876f, (byte) 7, TeleportAnimation.BEAM_ANIMATION);
 						changeQuestStep(env, 1, 2, false);
 						return closeDialogWindow(env);
 					}
@@ -185,7 +184,6 @@ public class _10520Covert_Communiques extends QuestHandler
         if (qs != null && qs.getStatus() == QuestStatus.START) {
             int var = qs.getQuestVarById(0);
             if (var == 0) {
-            	TeleportService2.teleportTo(player, 110010000, 2036f, 1542f, 581.1387f, (byte) 25, TeleportAnimation.BEAM_ANIMATION);
                 return HandlerResult.fromBoolean(useQuestItem(env, item, 0, 1, false));
             }
         }
