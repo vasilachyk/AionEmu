@@ -43,7 +43,7 @@ public class cmd_preview extends PlayerCommand {
 	public static boolean isFlooding(Player player)
 	{
 		player.setLastMessageTime();
-		if (player.floodMsgCount() > SecurityConfig.FLOOD_MSG) {
+		if (player.floodMsgCount() > SecurityConfig.FLOOD_MSG_PREVIEW) {
 			//30 menit
 			int delayInMinutes = 5;
 			boolean state = true;

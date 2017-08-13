@@ -45,8 +45,8 @@ public class Promote extends AdminCommand {
 		}
 		else if (params[1].toLowerCase().equals("membership")) {
 			type = 2;
-			if (mask > 10 || mask < 0) {
-				PacketSendUtility.sendMessage(admin, "membership can be 0 - 10");
+			if (mask > 2 || mask < 0) {
+				PacketSendUtility.sendMessage(admin, "membership can be 0 - 2");
 				return;
 			}
 		}

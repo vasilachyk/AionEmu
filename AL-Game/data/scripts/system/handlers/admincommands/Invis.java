@@ -18,15 +18,15 @@ public class Invis extends AdminCommand {
 
 	@Override
 	public void execute(Player player, String... params) {
-		if (player.getVisualState() < 3) {
+		if (player.getVisualState() < 20) {
 			player.getEffectController().setAbnormal(AbnormalState.HIDE.getId());
-			player.setVisualState(CreatureVisualState.HIDE3);
+			player.setVisualState(CreatureVisualState.HIDE20);
 			PacketSendUtility.broadcastPacket(player, new SM_PLAYER_STATE(player), true);
 			PacketSendUtility.sendMessage(player, "You are invisible.");
 		}
 		else {
 			player.getEffectController().unsetAbnormal(AbnormalState.HIDE.getId());
-			player.unsetVisualState(CreatureVisualState.HIDE3);
+			player.unsetVisualState(CreatureVisualState.HIDE20);
 			PacketSendUtility.broadcastPacket(player, new SM_PLAYER_STATE(player), true);
 			PacketSendUtility.sendMessage(player, "You are visible.");
 		}

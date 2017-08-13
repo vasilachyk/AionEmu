@@ -44,9 +44,9 @@ public class GMService
 		if (player.isGM()){
 			gms.put(player.getObjectId(), player);
 			if (announceAny) 
-			   PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "Announce: " + player.getCustomTag(true) + player.getName() + " telah login !!", ChatType.BRIGHT_YELLOW_CENTER), true);
+			   PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "Announce: " + player.getCustomTag(true) + player.getName() + " appear !!", ChatType.BRIGHT_YELLOW_CENTER), true);
             else if (announceList.contains(Byte.valueOf(player.getAccessLevel())))
-			   PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "Announce: " + player.getCustomTag(true) + player.getName() + " telah login !!", ChatType.BRIGHT_YELLOW_CENTER), true);
+			   PacketSendUtility.broadcastPacket(player, new SM_MESSAGE(player, "Announce: " + player.getCustomTag(true) + player.getName() + " appear !!", ChatType.BRIGHT_YELLOW_CENTER), true);
 		}
 	}
 	

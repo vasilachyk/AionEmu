@@ -415,7 +415,7 @@ public final class PlayerEnterWorldService
 			client.sendPacket(new SM_ABYSS_RANK(player.getAbyssRank()));
 			//Intro message
 			PacketSendUtility.sendWhiteMessage(player, serverName);
-			//PacketSendUtility.sendBrightYellowMessageOnCenter(player, ColorChat.colorChat("Welcome " + player.getName() , "1 0 5 0"));
+			PacketSendUtility.sendBrightYellowMessageOnCenter(player, ColorChat.colorChat("Welcome to AionUnity " + player.getName() , "1 0 5 0"));
 			PacketSendUtility.sendYellowMessage(player, serverIntro);
 			PacketSendUtility.sendBrightYellowMessage(player, serverInfo);
 			PacketSendUtility.sendWhiteMessage(player, alInfo);
@@ -527,12 +527,6 @@ public final class PlayerEnterWorldService
 			else if (player.getMembership() >= 0 && player.getLevel() >= 55) {
 				playersBonus = new PlayersBonus(2000001);
 				playersBonus.applyEffect(player, 2000001);
-			/*}
-			//Eminence Of The Beaver.
-			else if (player.getLevel() >= 66 && player.getLevel() <= 83) {
-				playersBonus = new PlayersBonus(10);
-				playersBonus.applyEffect(player, 10);
-				player.setPlayersBonusId(10);*/
 			} else {
 				playersBonus = new PlayersBonus(1);
 				playersBonus.endEffect(player, 1);

@@ -145,7 +145,7 @@
         <survey itemId="120001455" count="2"/>
         <survey itemId="123001358" count="1"/>
     </guide>
-    <guide title="adventurers_guide65_asmo_bard" level="65" race="ASMODIANS" classType="BARD" rewardCount="10">
+    <guide title="adventurers_guide65_asmo_bard" level="65" race="ASMODIANS" classType="SONGWEAVER" rewardCount="10">
         <message>
             <![CDATA[<BR><BR>
             Congratulations!
@@ -163,7 +163,7 @@
         <survey itemId="120001455" count="2"/>
         <survey itemId="123001358" count="1"/>
     </guide>
-    <guide title="adventurers_guide65_asmo_rider" level="65" race="ASMODIANS" classType="RIDER" rewardCount="10">
+    <guide title="adventurers_guide65_asmo_rider" level="65" race="ASMODIANS" classType="AETHERTECH" rewardCount="10">
         <message>
             <![CDATA[<BR><BR>
             Congratulations!
@@ -181,7 +181,7 @@
         <survey itemId="120001455" count="2"/>
         <survey itemId="123001358" count="1"/>
     </guide>
-    <guide title="adventurers_guide65_ely_rider" level="65" race="ELYOS" classType="RIDER" rewardCount="10">
+    <guide title="adventurers_guide65_ely_rider" level="65" race="ELYOS" classType="AETHERTECH" rewardCount="10">
         <message>
             <![CDATA[<BR><BR>
             Congratulations!
@@ -199,7 +199,7 @@
         <survey itemId="120001455" count="2"/>
         <survey itemId="123001358" count="1"/>
     </guide>
-    <guide title="adventurers_guide65_ely_bard" level="65" race="ELYOS" classType="BARD" rewardCount="10">
+    <guide title="adventurers_guide65_ely_bard" level="65" race="ELYOS" classType="SONGWEAVER" rewardCount="10">
         <message>
             <![CDATA[<BR><BR>
             Congratulations!
@@ -217,7 +217,7 @@
         <survey itemId="120001455" count="2"/>
         <survey itemId="123001358" count="1"/>
     </guide>
-    <guide title="adventurers_guide65_asmo_gunner" level="65" race="ASMODIANS" classType="GUNNER" rewardCount="10">
+    <guide title="adventurers_guide65_asmo_gunner" level="65" race="ASMODIANS" classType="GUNSLINGER" rewardCount="10">
         <message>
             <![CDATA[<BR><BR>
             Congratulations!
@@ -235,7 +235,7 @@
         <survey itemId="120001455" count="2"/>
         <survey itemId="123001358" count="1"/>
     </guide>
-    <guide title="adventurers_guide65_ely_gunner" level="65" race="ELYOS" classType="GUNNER" rewardCount="10">
+    <guide title="adventurers_guide65_ely_gunner" level="65" race="ELYOS" classType="GUNSLINGER" rewardCount="10">
         <message>
             <![CDATA[<BR><BR>
             Congratulations!
