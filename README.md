@@ -9,14 +9,14 @@
 
 ### AionUnity 5.1 TODO List
 
-### High Priority:
+#### High Priority:
 * Note:
   - None
 
-### Middle Priority:
+##### Middle Priority:
 * Not Yet
 
-### Low Priority:
+##### Low Priority:
 * Not Yet
 
 ### Emulator Features:
