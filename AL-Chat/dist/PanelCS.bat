@@ -1,10 +1,11 @@
 @ECHO off
-TITLE Aion Lightning - Chat Server Panel
+TITLE Aion Unity - Chat Server Panel
 :MENU
+color f0
 CLS
 ECHO.
 ECHO   ^*--------------------------------------------------------------------------^*
-ECHO   ^|                    Aion Lightning - Chat Server Panel                    ^|
+ECHO   ^|                    Aion Unity - Chat Server Panel                    ^|
 ECHO   ^*--------------------------------------------------------------------------^*
 ECHO   ^|                                                                          ^|
 ECHO   ^|    1 - Development                                       3 - Quit        ^|

@@ -37,6 +37,8 @@ import javolution.util.FastMap;
 import com.aionemu.gameserver.configs.main.LegionConfig;
 import com.aionemu.gameserver.model.bonus_service.ServiceBuff;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.network.aion.serverpackets.SM_ICON_INFO;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.World;
 
 /**
@@ -52,6 +54,7 @@ public class Legion {
 	private int legionRank = 0;
 	private long contributionPoints = 0;
 	private List<Integer> legionMembers = new ArrayList<Integer>();
+	private int onlineMembersCount = 0;
 	private short deputyPermission = 0x1E0C;
 	private short centurionPermission = 0x1C08;
 	private short legionaryPermission = 0x1800;
@@ -174,6 +177,17 @@ public class Legion {
 	public void deleteLegionMember(int playerObjId) {
 		legionMembers.remove(new Integer(playerObjId));
 	}
+	public int getOnlineMembersCount() {
+        return this.onlineMembersCount;
+    }
+
+    public void decreaseOnlineMembersCount() {
+        this.onlineMembersCount--;
+    }
+
+    public void increaseOnlineMembersCount() {
+        this.onlineMembersCount++;
+    }
 
 	/**
 	 * This method will set the permissions
@@ -527,14 +541,9 @@ public class Legion {
 	public void addHistory(LegionHistory history) {
 		this.legionHistory.add(history);
 	}
-	
-	public void addBonus() {
+	//buff legion
+	/*public void addBonus() {
 		ArrayList<Player> members = getOnlineLegionMembers();
-		//레기온 창고란 같은 레기온원들 끼리 공동으로 사용하는 창고의 개념이다.
-		//즉, 다른 레기온원이 이곳에 물건을 넣으면, 자신 외에 다른 권한을 가진 레기온원이 꺼내서 사용할 수 있다는 것.
-		//아직 영혼 각인하지 않은 무기, 방어구라든지 각종 소비 아이템, 심지어 키나까지도 레기온원들 끼리 공동으로 사용할 수 있게 해주는 아주 편리한 시스템이다.
-		//레기온 창고는 레기온을 설립하면 바로 이용이 가능하며, 레기온 창고의 이용 방식은 일반 창고와 동일하다.
-		//레기온의 레벨이 올라갈 수록 레기온 창고의 슬롯 수를 늘릴 수 있다.
 		if (members.size() >= 2 && members.size() <= 9) {
 			if (hasBonus.compareAndSet(false, true)) {
 			    for (Player member: members) {
@@ -571,7 +580,65 @@ public class Legion {
 			    }
 			}
 		}
-	}
+	}*/
+	//Legion buff bonus
+	public void addBonus() {
+        ArrayList<Player> members = getOnlineLegionMembers();
+        //if (members.size() >= LegionConfig.LEGION_BUFF_REQUIRED_MEMBERS) {
+          if (members.size() >= LegionConfig.LEGION_BUFF_REQUIRED_MEMBERS_STARTER && members.size() <= 9) {
+            if (hasBonus.compareAndSet(false, true)) {
+                for (Player member : members) {
+                	serviceBuff = new ServiceBuff(1);
+				    serviceBuff.applyEffect(member, 1);
+			    }
+			}
+		} else if (members.size() >= LegionConfig.LEGION_BUFF_REQUIRED_MEMBERS && members.size() <= 240) {
+			if (hasBonus.compareAndSet(false, true)) {
+			    for (Player member: members) {
+				    serviceBuff = new ServiceBuff(5);
+				    serviceBuff.applyEffect(member, 5);
+				    serviceBuff.endEffect(member, 1);
+                    PacketSendUtility.sendPacket(member, new SM_ICON_INFO(1, true));
+                    
+                }
+            }
+		}
+        for (Player member : members){
+         PacketSendUtility.sendMessage(member, "Legion : Bonus + 10 % XP , Craft , Gather , karena ada  2 member online.");          
+            
+        }
+    }
+
+    public void removeBonus() {
+        ArrayList<Player> members = getOnlineLegionMembers();
+        if (members.size() < LegionConfig.LEGION_BUFF_REQUIRED_MEMBERS_STARTER) {
+            	if (hasBonus.compareAndSet(true, false)) {
+            	for (Player member: members) {
+            		serviceBuff = new ServiceBuff(1);
+            		serviceBuff.endEffect(member, 1);
+            	}
+            }
+         } else if (members.size() < LegionConfig.LEGION_BUFF_REQUIRED_MEMBERS) {
+            	if (hasBonus.compareAndSet(true, false)) {
+            		for (Player member: members) {
+            		serviceBuff = new ServiceBuff(5);
+            		serviceBuff.endEffect(member, 5);
+            		serviceBuff.applyEffect(member, 1);
+            		PacketSendUtility.sendPacket(member, new SM_ICON_INFO(1, false));
+            		}
+            	}
+            }
+        }
+                  
+    //Legion buff remove message
+    public void removeBonusMassage() {
+        ArrayList<Player> members = getOnlineLegionMembers();
+        if (members.size() < LegionConfig.LEGION_BUFF_REQUIRED_MEMBERS_STARTER) {
+         for (Player member : members){
+          }
+        }
+        
+    } 
 
 	public boolean hasBonus() {
 		return hasBonus.get();
@@ -648,4 +715,6 @@ public class Legion {
 	public void setTerritory(LegionTerritory territory) {
 		this.territory = territory;
 	}
+
+
 }

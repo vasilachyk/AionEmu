@@ -1547,6 +1547,14 @@ public class LegionService {
         } else {
             legion.addBonus();
         }
+        //show message to player on login "have buff"
+        if (legion.getOnlineMembersCount() >= LegionConfig.LEGION_BUFF_REQUIRED_MEMBERS){
+        }
+        //show message to all when yeach player log in "no bonus"
+        legion.removeBonusMassage();        
+        //show message to player on login "no bonus"
+        if (legion.getOnlineMembersCount() < LegionConfig.LEGION_BUFF_REQUIRED_MEMBERS){
+        }
 	}
 
 	/**

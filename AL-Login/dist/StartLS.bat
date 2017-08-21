@@ -1,11 +1,14 @@
 @ECHO off
-TITLE Aion Lightning - Login Server Console
+TITLE Aion Unity Login Server
+color E
 :START
 CLS
 IF "%MODE%" == "" (
-CALL PanelLS.bat
+SET JAVA_OPTS=-Xms32m -Xmx512m -server
 )
-ECHO Starting Aion Lightning Login Server in %MODE% mode.
+ECHO Starting Aion Unity Login Server in %MODE% mode.
+set Path=..\Tools\Java\jre7\bin;%Path%
+set CLASSPATH=..\Tools\Java\jre7\lib\rt.jar
 JAVA %JAVA_OPTS% -cp ./libs/*;AL-Login.jar com.aionemu.loginserver.LoginServer
 SET CLASSPATH=%OLDCLASSPATH%
 IF ERRORLEVEL 2 GOTO START

@@ -1,10 +1,11 @@
 @ECHO off
-TITLE Aion Lightning - Login Server Panel
+TITLE Aion Unity - Login Server Panel
+color f0
 :MENU
 CLS
 ECHO.
 ECHO   ^*--------------------------------------------------------------------------^*
-ECHO   ^|                    Aion Lightning - Login Server Panel                   ^|
+ECHO   ^|                    Aion Unity - Login Server Panel                      ^|
 ECHO   ^*--------------------------------------------------------------------------^*
 ECHO   ^|                                                                          ^|
 ECHO   ^|    1 - Development                                       3 - Quit        ^|

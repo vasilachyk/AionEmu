@@ -1,11 +1,14 @@
 @ECHO off
-TITLE Aion Lightning - Chat Server Console
+TITLE Aion Unity Chat Server
+color f0
 :START
 CLS
 IF "%MODE%" == "" (
-CALL PanelCS.bat
+SET JAVA_OPTS=-Xms32m -Xmx512m -server
 )
 ECHO Starting Aion Lightning Chat Server in %MODE% mode.
+set Path=..\Tools\Java\jre7\bin;%Path%
+set CLASSPATH=..\Tools\Java\jre7\lib\rt.jar
 JAVA %JAVA_OPTS% -cp ./libs/*;AL-Chat.jar com.aionemu.chatserver.ChatServer
 SET CLASSPATH=%OLDCLASSPATH%
 IF ERRORLEVEL 2 GOTO START

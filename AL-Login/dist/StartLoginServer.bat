@@ -1,14 +1,14 @@
 @ECHO off
-TITLE Aion Lightning - Login Server Console
+TITLE Aion Unity - Login Server Console
 REM SET PATH=..\Jdk\bin
 REM SET PATH="Type here your path to java jdk/jre (including bin folder)."
 REM NOTE: Remove tag REM from previous line.
-
+color f0
 :start
 CLS
 echo.
 
-echo Starting Aion Lightning Login Server.
+echo Starting Aion Unity Login Server.
 echo.
 REM -------------------------------------
 REM Default parameters for a basic server.

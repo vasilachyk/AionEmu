@@ -42,7 +42,7 @@ public class CreativitySkillService
         PanelCp pcp = DataManager.PANEL_CP_DATA.getPanelCpId(id);
         if (point >= 1) {
             player.getSkillList().addSkill(player, pcp.getSkillId(), point + 1);
-            player.getCP().addPoint(player, id, 5);
+            player.getCP().addPoint(player, id, point);
         } else if (point == 0) {
             player.getSkillList().addSkill(player, pcp.getSkillId(), 1);
             player.getCP().removePoint(player, id);

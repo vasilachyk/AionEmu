@@ -111,4 +111,11 @@ public class LegionConfig
 	public static int LWH_LEVEL7_SLOTS;
 	@Property(key = "gameserver.legion.warehouse.level8.slots", defaultValue = "80")
 	public static int LWH_LEVEL8_SLOTS;
+	/**
+     * Legion Buff System
+     */
+    @Property(key = "gameserver.legion.buff.required.members", defaultValue = "10")
+    public static int LEGION_BUFF_REQUIRED_MEMBERS;
+    @Property(key = "gameserver.legion.buff.required.members.starter", defaultValue = "2")
+    public static int LEGION_BUFF_REQUIRED_MEMBERS_STARTER;
 }
