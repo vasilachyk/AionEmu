@@ -1549,11 +1549,13 @@ public class LegionService {
         }
         //show message to player on login "have buff"
         if (legion.getOnlineMembersCount() >= LegionConfig.LEGION_BUFF_REQUIRED_MEMBERS){
+        PacketSendUtility.sendYellowMessageOnCenter(activePlayer, "Legion : Horee ! kamu mendapatkan bonus Legion.");      
         }
         //show message to all when yeach player log in "no bonus"
         legion.removeBonusMassage();        
         //show message to player on login "no bonus"
         if (legion.getOnlineMembersCount() < LegionConfig.LEGION_BUFF_REQUIRED_MEMBERS){
+        PacketSendUtility.sendYellowMessageOnCenter(activePlayer, "Legion: invite lebih banyak member untuk mendapatkan bonus Legion.");
         }
 	}
 

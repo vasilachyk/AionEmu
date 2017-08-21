@@ -635,6 +635,7 @@ public class Legion {
         ArrayList<Player> members = getOnlineLegionMembers();
         if (members.size() < LegionConfig.LEGION_BUFF_REQUIRED_MEMBERS_STARTER) {
          for (Player member : members){
+         PacketSendUtility.sendMessage(member, "Legion : Bonus + 0 % XP , Craft , Gather , karena tidak ada 2 member online.");             
           }
         }
         
