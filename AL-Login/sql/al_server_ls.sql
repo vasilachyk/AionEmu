@@ -22,8 +22,6 @@ CREATE TABLE `account_data` (
   `question` varchar(50) DEFAULT NULL,
   `answer` varchar(50) DEFAULT NULL,
   `balance` float DEFAULT NULL,
-  `return_account` tinyint(1) NOT NULL DEFAULT '0',
-  `return_end` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
@@ -159,7 +157,7 @@ CREATE TABLE `player_transfers` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for svstats
+-- Table structure for `svstats`
 -- ----------------------------
 DROP TABLE IF EXISTS `svstats`;
 CREATE TABLE `svstats` (
@@ -176,7 +174,7 @@ CREATE TABLE `svstats` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for tasks
+-- Table structure for `tasks`
 -- ----------------------------
 DROP TABLE IF EXISTS `tasks`;
 CREATE TABLE `tasks` (
