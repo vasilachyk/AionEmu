@@ -1,0 +1,218 @@
+/** Costume CSS
+By Muhammad Noval
+**/
+
+a:hover {
+    color: #1c92c7;
+    text-decoration: none;
+}
+
+.captcha {
+    margin-left: -28.5px;
+}
+
+header, nav, ul, li {
+    display: inline-block;
+}
+
+nav .nav-control ul li a {
+    font-weight: bold;
+}
+
+nav .nav-control ul li a:hover {
+    text-decoration: none;
+}
+
+nav .nav-control ul li a:focus {
+    text-decoration: none;
+}
+
+.nav-right ul li a.stylesheet{
+    font-weight: normal;
+}
+
+.nav-right ul li a.stylesheet:hover{
+    color:#b1b1b1;
+}
+
+.nav-right ul li a {
+    font-weight: bold;
+}
+
+.nav-right ul li a span.spanduk {
+	color:green;
+
+}
+
+.nav-right ul li a:hover {
+    text-decoration: none;
+}
+
+.nav-right ul li a:focus {
+    text-decoration: none;
+}
+
+.nav-profile.dropdown a {
+    font-weight: bold;
+}
+
+.form-actions a {
+    color: #f0f9ed;
+}
+
+.form-actions a:hover {
+    color: #1c92c7;
+    text-decoration: none;
+}
+
+.form-actions .checkbox.checkbox-primary label {
+    color: #f0f9ed;
+    font-size: 13.5px;
+    font-weight: bold;
+}
+.container p a {
+    color: #f5f5f5;
+    text-decoration: underline;
+}
+
+.container h3 {
+    color: #f0f9ed;
+    font-weight: bold;
+}
+
+.card-title a {
+    color: #0c0d0e;
+}
+
+.card-title a:hover {
+    color: #1c92c7;
+    text-decoration: none;
+}
+
+.container p a:hover {
+    color: #1c92c7;
+    text-decoration: none;
+}
+
+table tbody tr td {
+    color: #000;
+}
+
+.table-bordered {
+	background-color : #fff;
+    color: #000;
+    font-weight: bold;
+}
+
+.table-bordered a {
+    color: #1eb0b0;
+}
+
+.table-bordered a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+section.hero.hero-panel {
+    margin: 0px;
+    padding: 0px;
+    background: no-repeat fixed;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    min-height: 495px;
+}
+
+.styled-select {
+	background : #0e87d8;
+	position : relative;
+	padding : 0px;
+	height : auto;
+	width : 200px;
+}
+
+.col-sm-8.options-style {
+	float: left;
+	left : 16.5%;
+}
+
+.panel.panel-default .panel-title a {
+    color: #1b1b1b;
+    font-weight: bold;
+}
+
+.panel.panel-default .panel-title a:focus {
+    text-decoration: none;
+}
+
+.panel.panel-default .panel-title a:hover {
+    color: #1c92c7;
+    text-decoration: none;
+}
+
+/* Items Shop */
+
+.card.card-hover .card-img {
+    background : rgba(216, 225, 213, 0.81) url("../images/cover-webshop.jpg") no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    padding: 15px 10px;
+    -webkit-transition:.25s;
+    transition:.25s;
+    border-radius:0;
+    -webkit-border-radius:0;
+}
+
+.card.card-hover .card-img img {
+    position: relative;
+    left: 45%;
+    padding: 0px;
+    border-radius: 50px;
+    height: 55px;
+    width: 55px;
+}
+
+.card.card-hover .card-img .hero-bg {
+    margin: 0px;
+    padding: 0px;
+}
+
+.btn.btn-success.btn-outline.pos {
+    left: 35%;
+    position: relative;
+}
+
+.card.card-hover .caption p {
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    color: #7a7880;
+    font-weight: normal;
+    color: i;
+}
+
+/* NAV STYLE */
+
+ul .dropdown-menu.default {
+	background : #141619;
+}
+
+ul .dropdown-menu.default li a {
+	font-weight : bold;
+	color : #FFF;
+}
+
+.nav-right .nav-profile.dropdown .dropdown-menu {
+	background :#141619;
+}
+
+.nav-right .nav-profile.dropdown .dropdown-menu li a {
+	color : #FFF;
+	font-weight : bold;width : 178px;
+}
+
+.nav-right .nav-profile.dropdown .dropdown-menu li a:before, .nav-right .nav-profile.dropdown .dropdown-menu li a:after, .nav-right .nav-profile.dropdown .dropdown-menu li a:active, .nav-right .nav-profile.dropdown .dropdown-menu li a:hover, .nav-right .nav-profile.dropdown .dropdown-menu li a:focus {
+	width : 178px;
+	clear-after: inherit!important;
+}

@@ -1,0 +1,47 @@
+<?php $__env->startSection('content'); ?>
+
+<section class="content-wrap">
+    <div class="iplay-banner banner-top iplay-banner-parallax small">
+        <div class="image" style="background-image: url('<?php echo e(asset ('images/tiamat.jpg')); ?>')"></div>
+
+        <div class="info">
+            <div>
+                <div class="container">
+                    <h1>Aion Online <br>Tiamat's Ruin</h1>
+                    <em>"Account Information"</em>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container iplay-content">
+
+	<?php echo $__env->make('includes.crumbs-account', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	<form action="<?php echo e(action('AccountController@postPassword')); ?>" method="POST">
+		<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+        &nbsp;
+		<div class="iplay-input">
+			<input type="password" name="old_password" placeholder="Old-Password">
+		</div>
+
+		<div class="iplay-input">
+			<input type="password" name="new_password" placeholder="New-Password" minlength="6" maxlength="16">
+		</div>
+
+		<div class="iplay-input">
+			<input type="password" name="new_password_confirmation" placeholder="Con-Password" maxlength="16" minlength="6">
+		</div>
+
+		<div class="pull-right">
+			<button type="submit" value="Change Password" class="btn btn-default db">Change Password</button>
+		</div>
+	</form>
+    </div>
+</section>
+
+<?php echo $__env->make('footer.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,60 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header">
+			<h3>VOTE
+				<small><a class="btn btn-primary btn-sm pull-right" href="<?php echo e(action('Admin\VoteController@create')); ?>">Add Site</a></small>
+			</h3>
+		</div>
+
+		<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<?php if( ! $sites->isEmpty()): ?>
+		<table class="table  ">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Site Address</th>
+					<th>Points</th>
+					<th>Banner Url</th>
+					<th>Blocking Time</th>
+					<th class="text-center">Action</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<?php foreach($sites as $site): ?>
+					<tr>
+						<td><?php echo e($site->name); ?></td>
+						<td><?php echo e($site->address); ?></td>
+						<td><?php echo e($site->points); ?></td>
+						<td><?php echo e($site->banner_url); ?></td>
+						<td><?php echo e($site->blocking_time); ?></td>
+						<td class="text-center">
+							<div class="btn-group">
+							  <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+							    Action <span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu" role="menu">
+							    <li><a href="<?php echo e(action('Admin\VoteController@edit', $site->id)); ?>">Edit</a></li>
+							    <li><a href="<?php echo e(action('Admin\VoteController@destroy', $site->id)); ?>" data-method="delete" data-remote="true" data-confirm="Are you sure you want to delete site <?php echo e($site->name); ?>?" class="destroy-btn">Delete</a></li>
+							  </ul>
+							</div>
+						</td>
+					</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+
+		<div class="pull-right">
+			<?php echo $sites->render(); ?>
+
+		</div>
+
+		<?php else: ?>
+			No votes sites.
+		<?php endif; ?>
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

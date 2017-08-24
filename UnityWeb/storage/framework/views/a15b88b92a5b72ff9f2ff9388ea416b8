@@ -1,0 +1,157 @@
+<?php $__env->startSection('content'); ?>
+
+<section class="content-wrap">
+    <div class="iplay-banner banner-top iplay-banner-parallax small">
+        <div class="image" style="background-image: url('<?php echo e(asset ('images/ascensions.jpg')); ?>')"></div>
+
+        <div class="info">
+            <div>
+                <div class="container">
+                    <h1>Aion Online <br>Ascension's</h1>
+                    <em>"Player Information"</em>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container iplay-content">
+
+    <?php if( ! empty($player)): ?>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <table class="table table-bordered table-hover">
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td><?php echo e($player->name); ?></td>
+                    </tr>
+
+                    <tr>
+                        <td>Level</td>
+                        <td><?php echo e(char_exptolevel($player->exp)); ?></td>
+                    </tr>
+
+                    <tr>
+                        <td>Experience</td>
+                        <td><?php echo e($player->exp); ?></td>
+                    </tr>
+
+                    <tr>
+                        <td>Location</td>
+                        <td><?php echo e(world_location($player->world_id)); ?></td>
+                    </tr>
+
+                    <tr>
+                        <td>Title</td>
+                        <td><?php echo e(char_title($player->title_id)); ?></td>
+                    </tr>
+
+                    <tr>
+                        <td>Legion</td>
+                        <td><?php echo e($player->legionname ? $player->legionname : 'No Legion'); ?></td>
+                    </tr>
+
+                    <tr>
+                        <td>Last Visit</td>
+                        <td><?php echo e($player->last_online); ?></td>
+                    </tr>
+
+                    <tr>
+                        <td>Created</td>
+                        <td><?php echo e($player->creation_date); ?></td>
+                    </tr>
+
+                    <?php if(Auth::check() && Auth::user()->access_level >= 2): ?>
+                    <tr>
+                        <td><b>Add Info For GM Viewer</b></td>
+                        <td></td>
+                    </tr>
+
+                    <tr>
+                        <td>Account ID</td>
+                        <td><?php echo e($player->account_id); ?></td>
+                    </tr>
+
+                    <tr>
+                        <td>Player ID</td>
+                        <td><?php echo e($player->id); ?></td>
+                    </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+
+		<div class="col-sm-12 col-md-6">
+			<table class="table table-bordered table-hover">
+				<tbody>
+					<tr>
+						<td>Race</td>
+						<td><?php echo char_race($player->race); ?></td>
+					</tr>
+
+					<tr>
+						<td>Class</td>
+						<td><?php echo char_class($player->player_class); ?></td>
+					</tr>
+
+					<tr>
+						<td>Sex</td>
+						<td><?php echo char_gender($player->gender); ?></td>
+					</tr>
+
+					<tr>
+						<td>Status</td>
+						<td><?php echo char_online($player->online); ?></td>
+					</tr>
+
+					<tr>
+						<td>Rank</td>
+						<td><?php echo e(char_rank($player->rank)); ?></td>
+					</tr>
+
+					<tr>
+						<td>AP</td>
+						<td><?php echo e($player->ap); ?></td>
+					</tr>
+
+					<tr>
+						<td>Kills</td>
+						<td><?php echo e($player->all_kill); ?></td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+
+		<?php if( ! $inventory_items->isEmpty()): ?>
+			<div class="col-sm-12">
+				<div class="page-header"><h4>Inventory</h4></div>
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<td>Item</td>
+							<td>Item Quantity</td>
+						</tr>
+					</thead>
+
+					<tbody>
+						<?php foreach($inventory_items as $item): ?>
+						<tr>
+							<td><a href="http://aiondatabase.net/us/item/<?php echo e($item->item_id); ?>" target="_blank"><?php echo e($item->item_id); ?></a></td>
+							<td><?php echo e($item->item_count); ?></td>
+						</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
+		<?php endif; ?>
+	</div>
+	<?php else: ?>
+		Player not found.
+	<?php endif; ?>
+    </div>
+</section>
+
+<?php echo $__env->make('footer.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

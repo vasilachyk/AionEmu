@@ -1,0 +1,62 @@
+ <?php $__env->startSection('content'); ?> <?php echo $__env->make('slider.slider', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<div class="container iplay-store">
+    <div class="col-md-9 col-md-push-3 isotope">
+        <ul class="pagination isotope-options">
+            <li data-filter="all" class="active"><span>GAMESHOP / <?php echo e(strtoupper($category->name)); ?></span></li>
+        </ul>
+        <div class="item-list">
+            <?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> <?php if( ! $items->isEmpty()): ?> <?php foreach($items as $item): ?>
+            <div class="item_shop">
+                <img src="http://aiondatabase.net/items/<?php echo e($item->image_id); ?>" class="item-icon" alt="">
+                <a href="http://aiondatabase.net/us/item/<?php echo e($item->item_id); ?>" target="_blank"><?php echo e($item->name); ?></a>
+                <hr class="onepixel">
+                <div class="item-label">
+                    <ul>&bull; ITEM COUNT : <?php echo e($item->amount); ?> pcs</ul>
+                    <ul>&bull; ENCHANT : <?php echo e($item->enchant > 0 ? '+'. $item->enchant : 'N/A'); ?></ul>
+                    <ul>&bull; TEMPREANCE : <?php echo e($item->temperance > 0 ? '+'. $item->temperance : 'N/A'); ?></ul>
+                    <ul>&bull; ITEM TYPE : <?php echo e($item->type); ?></ul>
+                    <ul>&bull; ITEM LEVEL : <?php echo e($item->level); ?></ul>
+                    <ul>&bull; PRICE : <?php echo Helper::webshop_discount($item->price, Auth::user()->membership, Auth::user()->expire); ?>.</ul>
+                    <div id="button">
+                        <a class="btn btn-info btn-xs" href="<?php echo e(action('WebshopController@getPurchase', $item->id)); ?>">Purchase</a>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+            <div class="pull-bottom">
+                <?php echo $items->render(); ?>
+
+            </div>
+            <?php else: ?> No items available. <?php endif; ?>
+        </div>
+    </div>
+    <div class="col-md-3 col-md-pull-9">
+        <div class="side-block">
+            <p>Search by Names:</p>
+            <form action="<?php echo e(action('WebshopController@getIndex')); ?>" method="GET">
+                <div class="iplay-input">
+                    <input type="text" name="itemname" value="<?php echo e(Input::get('itemname')); ?>" placeholder="Search by item Name">
+                </div>
+            </form>
+        </div>
+        <div class="side-block">
+            <h4 class="block-title"><?php echo $__env->make('includes.toll', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></h4>
+        </div>
+        <div class="side-block">
+            <h4 class="block-title">Categories</h4>
+            <ul class="block-content">
+                <?php echo $__env->make('includes.crumbs-webshop', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            </ul>
+        </div>
+        <div class="side-block">
+            <h4 class="block-title">Beli I-Coin(s)</h4>
+            <a href="#!">
+                <button class="btn btn-default db">Di Sini</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<?php echo $__env->make('footer.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> <?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,58 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header">
+			<h3>Pages
+				<small><a class="btn btn-primary btn-sm pull-right" href="<?php echo e(action('Admin\PageController@create')); ?>">Add Page</a></small>
+			</h3>
+
+			<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+
+		<?php if( ! $pages->isEmpty()): ?>
+			<table class="table  ">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Title</th>
+						<th>Slug</th>
+						<th>Link</th>
+						<th>Status</th>
+						<th class="text-center">Action</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<?php foreach($pages as $page): ?>
+						<tr>
+							<td><?php echo e($page->id); ?></td>
+							<td><?php echo e($page->title); ?></td>
+							<td><?php echo e($page->slug); ?></td>
+							<td></td>
+							<td><?php echo data_status($page->status); ?></td>
+							<td class="text-center">
+								<div class="btn-group">
+								  <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								    Action <span class="caret"></span>
+								  </button>
+								  <ul class="dropdown-menu" role="menu">
+								    <li><a href="<?php echo e(action('Admin\PageController@edit', $page->id)); ?>">Edit</a></li>
+								    <li><a href="<?php echo e(action('Admin\PageController@destroy', $page->id)); ?>" data-method="delete" data-remote="true" data-confirm="Are you sure you want to delete page <?php echo e($page->title); ?>?" class="destroy-btn">Delete</a></li>
+								  </ul>
+								</div>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+			</table>
+			<div class="pull-right">
+				<?php echo $pages->render(); ?>
+
+			</div>
+		<?php else: ?>
+			No pages.
+		<?php endif; ?>
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

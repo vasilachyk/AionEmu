@@ -1,0 +1,54 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header">
+			<h3>News
+				<small><a class="btn btn-primary btn-sm pull-right" href="<?php echo e(action('Admin\NewsController@create')); ?>">Add News</a></small>
+			</h3>
+
+			<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+
+		<?php if( ! $news->isEmpty()): ?>
+			<table class="table  ">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Category</th>
+						<th>Created By</th>
+						<th>Updated By</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<?php foreach($news as $item): ?>
+						<tr>
+							<td><a href="<?php echo e(action('NewsController@getNews', [$item->id, $item->slug])); ?>"><?php echo e($item->title); ?></a></td>
+							<td><?php echo e($item->catTitle); ?></td>
+							<td><?php echo e($item->createdby_name); ?></td>
+							<td><?php echo e($item->updatedby_name); ?></td>
+							<td>
+								<div class="btn-group">
+								  <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								    Action <span class="caret"></span>
+								  </button>
+								  <ul class="dropdown-menu" role="menu">
+								    <li><a href="<?php echo e(action('Admin\NewsController@edit', $item->id)); ?>">Edit</a></li>
+								    <li><a href="<?php echo e(action('Admin\NewsController@destroy', $item->id)); ?>" data-method="delete" data-remote="true" data-confirm="Are you sure you want to delete news <?php echo e($item->title); ?>?" class="destroy-btn">Delete</a></li>
+								  </ul>
+								</div>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+			</table>
+
+			<div class="pull-right"><?php echo $news->render(); ?></div>
+		<?php else: ?>
+			No news yet.
+		<?php endif; ?>
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

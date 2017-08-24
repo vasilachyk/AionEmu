@@ -1,0 +1,65 @@
+<section class="content-wrap">
+
+    <!-- Slider Revolution-->
+    <!--
+        Use classes:
+        rs-fullscreen
+    -->
+    <div class="tp-banner-container rs-iplay">
+        <div class="tp-banner">
+            <ul>
+                <!-- SLIDE NR. 1  -->
+                <li data-thumb="<?php echo e(asset ('images/costume-1.jpg')); ?>" data-saveperformance="on" data-transition="random-static" data-slotamount="7" data-masterspeed="700">
+                    <!-- MAIN IMAGE -->
+                    <img src="<?php echo e(asset ('images/dummy.png')); ?>" alt="" data-lazyload="<?php echo e(asset ('images/costume-1.jpg')); ?>" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                    <!-- LAYERS -->
+
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption customin customout" data-x="left" data-hoffset="60" data-y="center" data-voffset="-60" data-customin="x:200;scaleX:0.5;scaleY:0.5;" data-customout="x:0;scaleX:1;scaleY:1;" data-start="500" data-speed="700" data-easing="Sine.easeInOut" data-endspeed="600" data-endeasing="Linear.easeNone">
+                        <h2 class="h1">Aion Online <br>With New Costume</h2>
+                    </div>
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption customin customout" data-x="left" data-hoffset="60" data-y="center" data-voffset="60" data-customin="x:200;scaleX:0.5;scaleY:0.5;" data-customout="x:0;scaleX:1;scaleY:1;" data-start="1000" data-speed="700" data-easing="Sine.easeInOut" data-endspeed="600" data-endeasing="Linear.easeNone">
+                        <a class="btn btn-lg" href="webshop/category/costume">Beli Sekarang!</a>
+                    </div>
+                </li>
+
+                <!-- SLIDE NR. 2  -->
+                <li data-thumb="<?php echo e(asset ('images/costume-2.jpg')); ?>" data-saveperformance="on" data-transition="random-static" data-slotamount="7" data-masterspeed="700">
+                    <!-- MAIN IMAGE -->
+                    <img src="<?php echo e(asset ('images/dummy.png')); ?>" alt="" data-lazyload="<?php echo e(asset ('images/costume-2.jpg')); ?>" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                    <!-- LAYERS -->
+
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption customin customout" data-x="left" data-hoffset="60" data-y="center" data-voffset="-45" data-customin="x:200;scaleX:0.5;scaleY:0.5;" data-customout="x:0;scaleX:1;scaleY:1;" data-start="500" data-speed="700" data-easing="Sine.easeInOut" data-endspeed="600" data-endeasing="Linear.easeNone">
+                        <h2 class="h1">Aion Online <br>1 I-Coin Rp.1000,-</h2>
+                    </div>
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption customin customout" data-x="left" data-hoffset="60" data-y="center" data-voffset="45" data-customin="x:200;scaleX:0.5;scaleY:0.5;" data-customout="x:0;scaleX:1;scaleY:1;" data-start="1000" data-speed="700" data-easing="Sine.easeInOut" data-endspeed="600" data-endeasing="Linear.easeNone">
+                        <a class="btn btn-lg" href="#!">Beli Sekarang!</a>
+                    </div>
+                </li>
+
+                <!-- SLIDE NR. 3  -->
+                <li data-thumb="<?php echo e(asset ('images/costume-3.jpg')); ?>" data-saveperformance="on" data-transition="random-static" data-slotamount="7" data-masterspeed="700">
+                    <!-- MAIN IMAGE -->
+                    <img src="<?php echo e(asset ('images/dummy.png')); ?>" alt="" data-lazyload="<?php echo e(asset ('images/costume-3.jpg')); ?>" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                    <!-- LAYERS -->
+
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption customin customout" data-x="left" data-hoffset="60" data-y="center" data-voffset="-60" data-customin="x:200;scaleX:0.5;scaleY:0.5;" data-customout="x:0;scaleX:1;scaleY:1;" data-start="500" data-speed="700" data-easing="Sine.easeInOut" data-endspeed="600" data-endeasing="Linear.easeNone">
+                        <h2 class="h1">Aion Online <br>Wings of Agony</h2>
+                    </div>
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption customin customout" data-x="left" data-hoffset="60" data-y="center" data-voffset="60" data-customin="x:200;scaleX:0.5;scaleY:0.5;" data-customout="x:0;scaleX:1;scaleY:1;" data-start="1000" data-speed="700" data-easing="Sine.easeInOut" data-endspeed="600" data-endeasing="Linear.easeNone">
+                        <a class="btn btn-lg" href="webshop/category/wings">Beli Sekarang!</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="tp-bannertimer"></div>
+        </div>
+    </div>
+    <!-- /Slider Revolution-->

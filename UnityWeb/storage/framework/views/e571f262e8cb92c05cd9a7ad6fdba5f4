@@ -1,0 +1,116 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header">
+			<h3>Ban System / Player</h3>
+
+			<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<form action="<?php echo e(action('Admin\BanController@getPlayer')); ?>" method="GET" class="form-inline pull-left fr">
+					<div class="form-group">
+						<input type="text" name="name" class="form-control" placeholder="Player Name" value="<?php echo e(!empty(Input::get('name')) ? Input::get('name') : ''); ?>">
+						<input type="submit" value="Filter" class="btn btn-primary">
+					</div>
+				</form>
+
+				<form action="<?php echo e(action('Admin\BanController@getPlayer')); ?>" method="GET" class="form-inline pull-left fr">
+					<div class="form-group">
+						<input type="text" name="playerid" class="form-control" placeholder="Player ID" value="<?php echo e(!empty(Input::get('playerid')) ? Input::get('playerid') : ''); ?>">
+						<input type="submit" value="Filter" class="btn btn-primary">
+					</div>
+				</form>
+
+				<form action="<?php echo e(action('Admin\BanController@getPlayer')); ?>" method="GET" class="form-inline pull-left">
+					<div class="form-group">
+						<input type="text" name="account" class="form-control" placeholder="Account Name" value="<?php echo e(!empty(Input::get('account')) ? Input::get('account') : ''); ?>">
+						<input type="submit" value="Filter" class="btn btn-primary">
+					</div>
+				</form>
+
+				<form action="<?php echo e(action('Admin\BanController@getPlayer')); ?>" method="GET" class="form-inline pull-right">
+					<div class="form-group">
+						<select name="filterby" class="form-control">
+							<option value="">-- Select Filter ---</option>
+							<option value="ALLBANNED" <?php echo e(be_selected(Input::get('filterby'), 'ALLBANNED')); ?> >All Banned</option>
+							<option value="CHARBAN" <?php echo e(be_selected(Input::get('filterby'), 'CHARBAN')); ?>>Char Banned</option>
+							<option value="PRISON" <?php echo e(be_selected(Input::get('filterby'), 'PRISON')); ?>>Prison Banned</option>
+							<option value="GATHER" <?php echo e(be_selected(Input::get('filterby'), 'GATHER')); ?>>Gather Banned</option>
+						</select>
+						<input type="submit" value="Filter" class="btn btn-primary">
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<?php if( ! $players->isEmpty()): ?>
+			<table class="table  ">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Account ID</th>
+						<th>Account Name</th>
+						<th>Status</th>
+						<th>Ban Type</th>
+						<th>Duration</th>
+						<th>Reason</th>
+						<th>Banned By</th>
+						<th class="text-center">Action</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<?php foreach($players as $player): ?>
+						<tr>
+							<td><?php echo e($player->id); ?></td>
+							<td><a href="<?php echo e(action('HomeController@player', $player->id)); ?>"><?php echo e($player->name); ?></a></td>
+							<td><?php echo e($player->account_id); ?></td>
+							<td><?php echo e($player->account_name); ?></td>
+							<td><?php echo e(empty($player->player_id) ? 'Ok' : 'Banned'); ?></td>
+							<td><?php echo e(empty($player->punishment_type) ? 'N/A' : $player->punishment_type); ?></td>
+							<td><?php echo e(empty($player->duration) ? 'N/A' : $player->duration); ?></td>
+							<td><?php echo e(empty($player->reason) ? 'N/A' : $player->reason); ?></td>
+							<th><?php echo e(empty($player->banned_by) ? 'N/A' : $player->banned_by); ?></th>
+							<td class="text-center">
+								<div class="btn-group">
+								  <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								    Action <span class="caret"></span>
+								  </button>
+								  <ul class="dropdown-menu" role="menu">
+								    <li><a href="<?php echo e(action('Admin\BanController@getCharEdit', $player->id)); ?>">Edit</a></li>
+								    <li><a href="<?php echo e(action('Admin\BanController@postRemoveChar', $player->id)); ?>" data-method="post" data-confirm="Are you sure you want to remove <?php echo e($player->name); ?> banned status?" class="remove-btn">Remove Ban</a></li>
+								  </ul>
+								</div>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+			</table>
+
+			<div class="pull-right">
+				<?php if(! empty(Input::get('name'))): ?>
+					<?php echo $players->appends(['name' => Input::get('name')])->render(); ?>
+
+				<?php elseif(! empty(Input::get('account'))): ?>
+					<?php echo $players->appends(['account' => Input::get('account')])->render(); ?>
+
+				<?php elseif(! empty(Input::get('filterby'))): ?>
+					<?php echo $players->appends(['filterby' => Input::get('filterby')])->render(); ?>
+
+				<?php else: ?>
+					<?php echo $players->render(); ?>
+
+				<?php endif; ?>
+			</div>
+		<?php else: ?>
+			<div>
+				Players not found.
+			</div>
+		<?php endif; ?>
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

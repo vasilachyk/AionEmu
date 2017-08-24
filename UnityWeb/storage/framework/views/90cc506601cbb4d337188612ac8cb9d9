@@ -1,0 +1,63 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header">
+			<h3>LOGS / MEMBERSHIP</h3>
+		</div>
+
+		<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<?php echo $__env->make('includes.crumbs-logs', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<div class="row">
+			<div class="col-sm-4 mbt pull-right text-right">
+				<form action="<?php echo e(action('Admin\LogController@getMembership')); ?>" method="GET">
+					<div class="form-inline">
+						<input type="text" name="account" value="<?php echo e(Input::get('account')); ?>" placeholder="Search by account" class="form-control">
+						<input type="submit" value="Search" class="btn btn-primary">
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<?php if( ! $logs->isEmpty()): ?>
+			<table class="table  ">
+				<thead>
+					<tr>
+						<th>Account Name</th>
+						<th>Account Type</th>
+						<th>Duration</th>
+						<td>Price</td>
+					</tr>
+				</thead>
+
+				<tbody>
+					<?php foreach($logs as $log): ?>
+						<tr>
+							<td><a href="<?php echo e(action('Admin\AccountController@index', ['accountid' => $log->account_id])); ?>" target="_blank"><?php echo e($log->name); ?></a></td>
+							<td><?php echo e(account_privileges($log->type, Carbon::now())); ?></td>
+							<td><?php echo e($log->duration . ' ' . str_plural('Day', $log->duration)); ?></td>
+							<td><?php echo e($log->price); ?></td>
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+			</table>
+
+			<div class="pull-right">
+				<?php if(! empty(Input::get('account'))): ?>
+					<?php echo $logs->appends(['account' => Input::get('account')])->render(); ?>
+
+				<?php else: ?>
+					<?php echo $logs->render(); ?>
+
+				<?php endif; ?>
+			</div>
+		<?php else: ?>
+			No membership yet.
+		<?php endif; ?>
+
+	</div>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

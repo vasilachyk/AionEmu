@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GZone - International Game Private Server</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
+        <meta name="csrf-param" content="_token" />
+
+        <link rel="apple-touch-icon" href="/">
+        <link rel="icon" type="image/png" href="<?php echo e(asset('images/icon.png')); ?>">
+        <!-- Place favicon.ico in the root directory -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="<?php echo e(asset('css/bootstrap-custom.min.css')); ?>" />
+        <link rel="stylesheet" href="<?php echo e(asset('css/font-awesome.min.css')); ?>" />
+        <link rel="stylesheet" href="<?php echo e(asset('css/main.css')); ?>">
+        <script src="<?php echo e(asset('js/vendor/modernizr-2.8.3.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/gzone.min.js')); ?>"></script>
+    </head>
+    <body>
+
+        <div class="mainbg">
+            <div class="bg01"></div>
+            <div class="bg02"></div>
+        </div>
+
+        <div class="mcontainer">
+            <div class="mheader">
+                <div class="hleft">
+                    <ul>
+                        <li><a href="<?php echo e(action('HomeController@index')); ?>">HOME</a></li>
+                        <li><a href="<?php echo e(action('HomeController@info')); ?>">INFO</a></li>
+                        <li><a href="<?php echo e(action('RankingController@getIndex')); ?>">RANKING</a></li>
+                    </ul>
+                </div>
+
+                <div class="hright">
+                    <ul>
+                        <li><a href="<?php echo e(action('HomeController@faq')); ?>">FAQ</a></li>
+                        <li><a href="<?php echo e(action('DonateController@getIndex')); ?>">DONATE</a></li>
+                        <li><a href="http://aion-genesis.tk/forum/" target="_blank">FORUM</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-container">
+                <div class="mtop"></div>
+                <div class="mcenter">
+                    <div class="container">
+                        <div class="mcleft">
+                            <?php if( ! Request::is('/')): ?>
+                                <img class="banner" src="<?php echo e(asset('img/banner.jpg')); ?>">
+                            <?php endif; ?>
+
+                            <?php echo $__env->yieldContent('content'); ?>
+                        </div>
+
+                        <div class="mcright">
+                            <div class="panel-acc">
+                                <div class="plant1"></div>
+                                <div class="patop"></div>
+                                <?php if(Auth::check()): ?>
+                                <div class="pact">
+                                    <div class="panel-logged">
+                                        <div class="welluser">Welcome, <?php echo e(Auth::user()->name); ?></div>
+                                        <ul>
+                                            <?php if(Auth::user()->access_level >= 3): ?>
+                                            <li><a class="" href="<?php echo e(action('Admin\DashboardController@getIndex')); ?>">Admin Dashboard</a></li>
+                                            <?php endif; ?>
+                                            <li><a class="" href="<?php echo e(action('AccountController@getIndex')); ?>">My Account</a></li>
+                                            <li><a class="" href="<?php echo e(action('VoteController@getIndex')); ?>">Vote</a></li>
+                                            <li><a class="" href="<?php echo e(action('WebshopController@getIndex')); ?>">Webshop</a></li>
+                                            <li><a class="" href="<?php echo e(action('Auth\AuthController@getLogout')); ?>">Logout</a></li>
+                                        </ul> 
+                                    </div>
+                                </div>
+                                <?php else: ?>
+                                    <div class="palogin">
+                                        <form method="POST" action="<?php echo e(action('Auth\AuthController@postLogin')); ?>">
+                                            <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                                            <div class="inputgroup">
+                                                <input id="username" type="text" name="name" placeholder="Username">
+                                                <input id="password" type="password" name="password" placeholder="Password">
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <input class="btn-login" type="submit" name="submit" value="submit">
+                                            <a href="<?php echo e(action('Auth\AuthController@getForgotPassword')); ?>" class="flink">Forgot Your Password?</a>
+                                        </form>
+                                    </div>
+                                <?php endif; ?>
+                                <div class="paft">
+                                    <div class="npc1"></div>
+                                    <div class="plant2"></div>
+                                </div>
+                            </div>
+
+                            <div class="panel-right">
+                                <div class="paneltext">VOTE FOR <br>AIONGENESIS!</div>
+
+                                <div class="votepanel">
+                                    <a href="#"><img src="<?php echo e(asset('img/vote_banner/xtremetop100.jpg')); ?>" /></a>
+                                    <a href="#"><img src="<?php echo e(asset('img/vote_banner/topofgames.jpg')); ?>" /></a>
+                                    <a href="#"><img src="<?php echo e(asset('img/vote_banner/arenatop100.jpg')); ?>" /></a>
+                                    <a href="#"><img src="<?php echo e(asset('img/vote_banner/aiontop200.jpg')); ?>" /></a>
+                                    <a href="#"><img src="<?php echo e(asset('img/vote_banner/gtop100.jpg')); ?>" /></a>
+                                    <a href="#"><img src="<?php echo e(asset('img/vote_banner/topgorg.jpg')); ?>" /></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="mcbottom">
+                    <div class="ftnav">
+                        <ul>
+                            <li><a href="<?php echo e(action('HomeController@index')); ?>">Home</a></li>
+                            <li><a href="<?php echo e(action('HomeController@info')); ?>">Info</a></li>
+                            <li><a href="<?php echo e(action('RankingController@getIndex')); ?>">Ranking</a></li>
+                            <li><a href="<?php echo e(action('HomeController@faq')); ?>">FAQ</a></li>
+                            <li><a href="<?php echo e(action('DonateController@getIndex')); ?>">Donate</a></li>
+                            <li><a href="http://aion-genesis.tk/forum/" target="_blank">Forum</a></li>
+                            <li><a href="<?php echo e(action('Auth\AuthController@getRegister')); ?>">Register</a></li>
+                            <li><a href="<?php echo e(action('HomeController@download')); ?>">Download</a></li>
+                            <li><a href="http://aion-genesis.tk/forum/index.php?threads/aion-genesis-launcher.4/#post-4">Connect</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="ftleft">
+                        <ul class="ftsocial">
+                            <li>Connect with Us :</li>
+                            <li><a href="https://www.facebook.com/groups/aion.genesis/1073709542718373/?notif_t=group_activity&notif_id=1468568950822567" target="_blank"><img  class="icon-fb" src="<?php echo e(asset('img/trans.png')); ?>" /></a></li>
+                            <li>
+                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                                <a href="/"><img  class="icon-twitter" src="<?php echo e(asset('img/trans.png')); ?>" /></a>
+                            </li>
+                            <li>
+                                <a href="/"><img  class="icon-google" src="<?php echo e(asset('img/trans.png')); ?>" alt="Share on Google+"/></a>
+                            </li>
+                        </ul>
+                        <p>&copy; AION-GENESIS 2015. All rights reserved.</p>
+                    </div>
+
+                    <div class="ftright">
+                        <ul>
+                            <li><div class="ftlogo"></div></li>
+                            <li><a href="#" target="_blank"><img class="yhmwhy" src="<?php echo e(asset('img/trans.png')); ?>" /></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="<?php echo e(asset('js/vendor/jquery-1.11.3.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/bootstrap.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/vendor/jquery-ujs.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/plugins.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/main.js')); ?>"></script>
+    </body>
+</html>

@@ -1,0 +1,125 @@
+<?php $__env->startSection('content'); ?>
+
+
+	<div class="col-sm-12 col-md-12">
+		<form action="<?php echo e(action('Admin\SettingsController@postEditRoutes')); ?>" method="POST">
+		<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+		<div class="page-header">
+			<h3>Admin Routes Access Settings Edit
+			<small>
+				<input class="btn btn-primary btn-xs pull-right" type="submit" value="Update Settings">
+				<a class="btn btn-danger btn-xs pull-right fr" href="<?php echo e(action('Admin\SettingsController@getIndex')); ?>">Cancel Edit</a>
+			</small></h3>
+
+			<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+
+		<div class="well">
+			* Hint <br>
+			1 - <?php echo account_access(1); ?> <br>
+			2 - <?php echo account_access(2); ?> <br>
+			3 - <?php echo account_access(3); ?> <br>
+			4 - <?php echo account_access(4); ?> <br>
+			5 - <?php echo account_access(5); ?> <br>
+			6 to 10 - <?php echo account_access(10); ?> <br>
+		</div>
+
+		<?php if( ! empty($access)): ?>
+			<div class="col-sm-2">
+				<div class="form-group">
+					<label>Dashboard</label>
+					<input type="text" name="dashboard" class="form-control" value="<?php echo e($access->dashboard); ?>">
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+				<div class="form-group">
+					<label>News</label>
+					<input type="text" name="news" class="form-control" value="<?php echo e($access->news); ?>">
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+				<div class="form-group">
+					<label>News Category</label>
+					<input type="text" name="news_category" class="form-control" value="<?php echo e($access->news_category); ?>">
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+				<div class="form-group">
+					<label>Accounts</label>
+					<input type="text" name="accounts" class="form-control" value="<?php echo e($access->accounts); ?>">
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+				<div class="form-group">
+					<label>Webshop</label>
+					<input type="text" name="webshop" class="form-control" value="<?php echo e($access->webshop); ?>">
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+				<div class="form-group">
+					<label>Webshop Category</label>
+					<input type="text" name="webshop_category" class="form-control" value="<?php echo e($access->webshop_category); ?>">
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+				<div class="form-group">
+					<label>Vote</label>
+					<input type="text" name="vote" class="form-control" value="<?php echo e($access->vote); ?>">
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+				<div class="form-group">
+					<label>Pages</label>
+					<input type="text" name="pages" class="form-control" value="<?php echo e($access->pages); ?>">
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+				<div class="form-group">
+					<label>Ban</label>
+					<input type="text" name="ban" class="form-control" value="<?php echo e($access->ban); ?>">
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+				<div class="form-group">
+					<label>Tools</label>
+					<input type="text" name="tools" class="form-control" value="<?php echo e($access->tools); ?>">
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+				<div class="form-group">
+					<label>Membership</label>
+					<input type="text" name="membership" class="form-control" value="<?php echo e($access->membership); ?>">
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+				<div class="form-group">
+					<label>Logs</label>
+					<input type="text" name="logs" class="form-control" value="<?php echo e($access->logs); ?>">
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+				<div class="form-group">
+					<label>Settings</label>
+					<input type="text" name="settings" class="form-control" value="<?php echo e($access->settings); ?>">
+				</div>
+			</div>
+		</form>
+		<?php else: ?>
+			No routes settings available.
+		<?php endif; ?>
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Aion I-Play</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
+    <meta name="csrf-param" content="_token" />
+
+    <link rel="icon" type="image/png" href="<?php echo e(asset('images/favicon.png')); ?>">
+    <!-- Place favicon.ico in the root directory -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset ('vendor/plugins/slider-revolution/examples&amp;source/rs-plugin/css/settings.css')); ?>" />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset ('bootstrap/dist/css/bootstrap.min.css')); ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset ('css/font-awesome.min.css')); ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset ('vendor/owl.carousel/dist/assets/owl.carousel.min.css')); ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset ('css/iplay.min.css')); ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset ('css/custom.css')); ?>" />
+</head>
+
+<body>
+
+    <div class="page-preloader preloader-wrapp">
+        <img src="<?php echo e(asset ('images/logo.png')); ?>" alt="">
+        <div class="preloader"></div>
+    </div>
+
+    <nav class="navbar-iplay navbar navbar-default navbar-fixed-top ">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="off-canvas" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="<?php echo e(action ('HomeController@index')); ?>">
+                    <img src="<?php echo e(asset ('images/logo.png')); ?>" alt="">
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown dropdown-hover ">
+                        <a href="<?php echo e(action ('HomeController@index')); ?>">
+                                HOME <span class="label">hompage</span>
+                            </a>
+                    </li>
+                    <li class="dropdown dropdown-hover ">
+                        <a href="<?php echo e(action('HomeController@download')); ?>">
+                                DOWNLOAD <span class="label">game download</span>
+                            </a>
+                    </li>
+                    <li class="dropdown dropdown-hover ">
+                        <a href="#!" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                STORE <span class="caret"></span> <span class="label">game store</span>
+                            </a>
+                        <div class="dropdown-menu">
+                            <ul role="menu">
+                                <li><a href="/webshop" title="Game Shop"><i class="fa fa-globe"></i> Game Shop</a></li>
+                                <li><a href="#!" title="Order DVD"><i class="fa fa-hdd-o"></i> Order DVD</a></li>
+                            </ul>
+                            <ul role="dropdown-menu">
+                                <li><a href="#!" title="I-Cash" data-toggle="modal" data-target="#myModal"><i class="fa fa-shopping-cart"></i> Beli I-Coin(s)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown dropdown-hover ">
+                        <a href="#!" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                STATISTIC <span class="caret"></span> <span class="label">game stats</span>
+                            </a>
+                        <div class="dropdown-menu">
+                            <ul role="menu">
+                                <li><a href="<?php echo e(action('RankingController@getAbyss')); ?>" title="Players"><i class="fa fa-globe"></i> Top Player</a></li>
+                                <li><a href="<?php echo e(action('RankingController@getGp')); ?>" title="Glory Players"><i class="fa fa-globe"></i> Top Glory Player</a></li>
+                                <li><a href="<?php echo e(action('RankingController@getAp')); ?>" title="Abyss Players"><i class="fa fa-globe"></i> Top Abyss Player</a></li>
+                                <li><a href="<?php echo e(action('RankingController@getLegions')); ?>" title="Legions"><i class="fa fa-globe"></i> Top Legion</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown dropdown-hover ">
+                        <a href="#!" target="_blank">
+                                FORUM <span class="label">game comunity</span>
+                            </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <?php if(Auth::check()): ?>
+                    <li class="dropdown dropdown-hover">
+                        <a href="#!" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                               <?php echo e(Auth::user()->name); ?> <span class="caret"></span> <span class="label">welcome back</span>
+                            </a>
+                        <div class="dropdown-menu">
+                            <ul role="menu">
+                                <li><a href="<?php echo e(action('Admin\DashboardController@getIndex')); ?>"><i class="fa fa-desktop"></i> Admin</a></li>
+                                <li><a href="<?php echo e(action('AccountController@getIndex')); ?>"><i class="fa fa-user"></i> My Account</a></li>
+                                <li><a href="<?php echo e(action('WebshopController@getIndex')); ?>"><i class="fa fa-globe"></i> GameShop</a></li>
+                                <li><a href="<?php echo e(action('Auth\AuthController@getLogout')); ?>"><i class="fa fa-sign-out"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <?php else: ?>
+                    <li><a href="<?php echo e(action('Auth\AuthController@getLogin')); ?>">Login</a></li>
+                    <li><a>Or</a></li>
+                    <li><a href="<?php echo e(action('Auth\AuthController@getRegister')); ?>">Register</a></li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <?php echo $__env->yieldContent('content'); ?>
+
+    <!--<div style="display:none;">
+            <section style="text-align:center">
+                <audio autoplay="autoplay" controls="controls">
+                    <source src="<?php echo e(asset ('sound/aion.mp3')); ?>"  type="audio/mpeg">
+                </audio>
+            </section>
+        </div>-->
+
+    <!-- MODAL -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Beli I-Coin(s)</h4>
+                </div>
+                <div class="modal-body">
+                    <h4>Daftar harga I-Coin</h4> - 1 <span>i-coin(s) = Rp.1.000</span>
+                    <br> - 25 <span>i-coin(s) = Rp.25.000</span>
+                    <br> - 50 <span>i-coin(s) = Rp.50.000</span>
+                    <br> - 100 <span>i-coin(s) = Rp.95.000</span>
+                    <br> - 250 <span>i-coin(s) = Rp.200.000</span>
+                    <br> Pembelian I-Cash Hub.Aka Mikeboyz IPlay
+                    <br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <a href="https://www.facebook.com/mingly.christian?fref=ts" target="_blank">
+                        <button type="button" class="btn btn-primary">Beli Sekarang</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Modals -->
+
+    <!-- JAVASCRIPT -->
+    <script src="<?php echo e(asset ('vendor/jquery/dist/jquery.min.js')); ?>"></script>
+    <script src="<?php echo e(asset ('vendor/HexagonProgress/jquery.hexagonprogress.min.js')); ?>"></script>
+    <script src="<?php echo e(asset ('bootstrap/dist/js/bootstrap.min.js')); ?>"></script>
+    <script src="<?php echo e(asset ('vendor/jarallax/dist/jarallax.min.js')); ?>"></script>
+    <script src="<?php echo e(asset ('vendor/smoothscroll-for-websites/SmoothScroll.js')); ?>"></script>
+    <script src="<?php echo e(asset ('vendor/owl.carousel/dist/owl.carousel.min.js')); ?>"></script>
+    <script src="<?php echo e(asset ('vendor/jquery.countdown/dist/jquery.countdown.min.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(asset ('vendor/plugins/slider-revolution/examples&amp;source/rs-plugin/js/jquery.themepunch.tools.min.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(asset ('vendor/plugins/slider-revolution/examples&amp;source/rs-plugin/js/jquery.themepunch.revolution.min.js')); ?>"></script>
+
+    <script type="text/javascript" src="<?php echo e(asset ('moment/min/moment.min.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(asset ('moment-timezone/builds/moment-timezone-with-data.min.js')); ?>"></script>
+
+    <script type="text/javascript" src="<?php echo e(asset ('vendor/imagesloaded/imagesloaded.pkgd.min.js')); ?>"></script>
+
+    <script type="text/javascript" src="<?php echo e(asset ('vendor/isotope/dist/isotope.pkgd.min.js')); ?>"></script>
+
+    <script src="<?php echo e(asset ('js/iplay.min.js')); ?>"></script>
+
+    <!-- JS -->
+    <script src="<?php echo e(asset ('js/aiondatabase.js')); ?>"></script>
+
+    <script>
+        if (typeof iplay !== 'undefined') {
+            iplay.init({
+                // enable parallax
+                parallax: true,
+
+                // set small navbar on load
+                navbarSmall: false,
+
+                // enable fade effect between pages
+                fadeBetweenPages: true,
+
+                // twitter and instagram php paths
+                php: {
+                    twitter: './php/twitter/tweet.php',
+                    instagram: './php/instagram/instagram.php'
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

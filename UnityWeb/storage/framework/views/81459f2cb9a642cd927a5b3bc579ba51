@@ -1,0 +1,55 @@
+<?php $__env->startSection('content'); ?>
+
+    <section class="hero hero-panel" style="background-image: url(<?php echo e(asset('images/default-backgorund.jpg')); ?>);">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="padding-top-25 no-padding-bottom border-bottom-1 border-grey-300">
+                <div class="headline">
+                    <h4 style="color: #fffbfb">Items Shop / <?php echo e(strtoupper($category->name)); ?></h4>
+                    <form action="<?php echo e(action('WebshopController@getIndex')); ?>" method="GET">
+                        <div class="form-group">
+                            <input type="text" name="itemname" value="<?php echo e(Input::get('itemname')); ?>" class="form-control hidden-xs" placeholder="Search items..." style="margin-right: 200px">
+                        </div>
+                    </form>
+                    <div class="dropdown" style="margin-top: -47px">
+                        <a href="#" class="btn btn-default btn-icon-left btn-icon-right dropdown-toggle" data-toggle="dropdown"><i class="ion-ios-pricetags"></i> Items category <i class="ion-android-arrow-dropdown"></i></a>
+                        <?php echo $__env->make('includes.crumbs-webshop', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-top-40">
+                <?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php if( ! $items->isEmpty()): ?>
+                    <?php foreach($items as $item): ?>
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 margin-bottom-sm-30">
+                            <div class="card card-hover">
+                                <div class="card-img">
+                                    <img src="/images/webshop/<?php echo e($item->image_id); ?>.png" class="item-icon" alt="">
+                                    <div class="category"><span class="label label-primary"><?php echo e($item->price); ?> Credits</span></div>
+                                </div>
+                                <div class="caption">
+                                    <h3 class="card-title"><a href="http://aiondatabase.net/us/item/<?php echo e($item->item_id); ?>" target="_blank"><?php echo e($item->name); ?></a></h3>
+                                    <p> ITEM AMOUNT : <?php echo e($item->amount); ?> PCS <br>
+                                        ITEM LEVEL : <?php echo e($item->level); ?> <br>
+                                        ENCHANT : <?php echo e($item->enchant > 0 ? '+'. $item->enchant : 'N/A'); ?> <br>
+                                        TEMPERANCE : <?php echo e($item->temperance > 0 ? '+'. $item->temperance : 'N/A'); ?> <br>
+                                        ITEM TYPE : <?php echo e($item->type); ?> <br>
+                                    </p>
+                                    <a href="<?php echo e(action('WebshopController@getPurchase', $item->id)); ?>" class="btn btn-success btn-outline pos">Purchase<i class="fa fa-shopping-cart margin-left-10"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                    <div class="pull-bottom text-center">
+                        <?php echo $items->render(); ?>
+
+                    </div>
+                <?php else: ?>
+                    <p class="text-center">No items available.</p>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

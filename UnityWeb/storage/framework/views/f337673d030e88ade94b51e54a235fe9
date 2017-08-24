@@ -1,0 +1,64 @@
+<?php $__env->startSection('content'); ?>
+
+	<?php $members = app('App\Repositories\LegionRepositoryInterface'); ?>
+
+    <section class="hero hero-panel" style="background-image: url(<?php echo e(asset('images/default-backgorund.jpg')); ?>);">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <h3>Top Legion's</h3>
+        
+            <?php if( ! $legions->isEmpty()): ?>
+
+            <div class="col-sm-12 rbm">
+                <div class="row">
+                    <div class="pull-right">
+                        <form action="<?php echo e(action('RankingController@getLegions')); ?>" method="GET">
+                            <div class="form-inline">
+                                <select name="filterby" class="form-control">
+                                    <option value="all" <?php echo e(be_selected(Input::get('filterby'), 'all')); ?>>All</option>
+                                    <option value="ely" <?php echo e(be_selected(Input::get('filterby'), 'ely')); ?>>Elyos</option>
+                                    <option value="asmo" <?php echo e(be_selected(Input::get('filterby'), 'asmo')); ?>>Asmodian</option>
+                                </select>
+                                <input type="submit" value="Filter" class="btn btn-default db">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            &nbsp;
+
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td>Number</td>
+                        <td>Race</td>
+                        <td>Name</td>
+                        <td>Brigade General</td>
+                        <td>Members</td>
+                        <td>Level</td>
+                        <td>Contribution Points</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach($legions as $index => $legion): ?>
+                    <tr>
+                        <td><?php echo e($index + 1); ?></td>
+                        <td><?php echo e($legion->race); ?></td>
+                        <td><a href="<?php echo e(action('HomeController@legion', $legion->id )); ?>"><?php echo e($legion->name); ?></a></td>
+                        <td><?php echo e($legion->players_name); ?></td>
+                        <td><?php echo e($members->getLegionMembersCount($legion->id)); ?></td>
+                        <td><?php echo e($legion->level); ?></td>
+                        <td><?php echo e(number_format($legion->contribution_points, 0,' ',',')); ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <?php else: ?>
+            No Legions Found.
+            <?php endif; ?>
+        </div>
+</section>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,132 @@
+<?php $__env->startSection('content'); ?>
+
+    <section class="hero hero-panel" style="background-image: url(<?php echo e(asset('images/default-backgorund.jpg')); ?>);">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 margin-bottom-sm-30">
+                <h3 style="color : #fcfcfc;">Donate List</h3>
+                <p>List Donasi Akan Berubah Sewaktu-waktu.</p>
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" id="headingOne">
+                            <h4 class="panel-title">
+                                <a href="#collapseOne" data-toggle="collapse" data-parent="#accordion">
+                                    DONATE PER ITEMS
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+							    <label class="btn btn-info btn-block">Paket Enchant</label>
+                                <p style="color: #0c0d0e; font-size: 16px; font-weight: bold; margin-top: 5px;">&nrightarrow; Enchant Items</p>
+                                    &longrightarrow; Enchan Armor 1 set +30 Bonus AP boost 10 dan drana cofe 150 = 50 ribu <br>
+                                    &longrightarrow; Enchan Acc 1 set + 5 Bonus AP boost 10 dan drana cofe 150 = 50ribu <br>
+                                    &longrightarrow; Enchan Weapon +30 Bonus AP boost 10 dan drana cofe 200 = 60 ribu <br>
+                                    &longrightarrow; Paket hemat Enchan armor 1set +30, acc 1 st +5 dan Weapon +30 Bonus AP boost 40, drana cofe 600 + baju wedding 1 <br>
+                                </p>
+                                <label class="btn btn-info btn-block">ARMOR</label>
+                                <p style="color: #0c0d0e; font-size: 16px; font-weight: bold; margin-top: 5px;">&nrightarrow; Armor Items</p>
+                                <p style="color: #0c0d0e; font-size: 13px; font-weight: bold; margin-top: 5px;">&longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                </p>
+                                <label class="btn btn-info btn-block">WEAPON</label>
+                                <p style="color: #0c0d0e; font-size: 16px; font-weight: bold; margin-top: 5px;">&nrightarrow; Weapon Items</p>
+                                <p style="color: #0c0d0e; font-size: 13px; font-weight: bold; margin-top: 5px;">&longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                </p>
+                                <label class="btn btn-info btn-block">ACCESSORIES</label>
+                                <p style="color: #0c0d0e; font-size: 16px; font-weight: bold; margin-top: 5px;">&nrightarrow; Accessories Items</p>
+                                <p style="color: #0c0d0e; font-size: 13px; font-weight: bold; margin-top: 5px;">&longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                </p>
+                                <label class="btn btn-info btn-block">WINGS</label>
+                                <p style="color: #0c0d0e; font-size: 16px; font-weight: bold; margin-top: 5px;">&nrightarrow; Wings Items</p>
+                                <p style="color: #0c0d0e; font-size: 13px; font-weight: bold; margin-top: 5px;">&longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a href="#collapseTwo" class="collapsed" data-toggle="collapse" data-parent="#accordion">
+                                    PAKET DONATE
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel">
+                            <div class="panel-body">
+                                <label class="btn btn-info btn-block">PAKET HEMAT</label>
+                                <p style="color: #0c0d0e; font-size: 16px; font-weight: bold; margin-top: 5px;">&nrightarrow; Hemat Items</p>
+                                <p style="color: #0c0d0e; font-size: 13px; font-weight: bold; margin-top: 5px;">&longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                </p>
+                                <label class="btn btn-info btn-block">PAKET BOROS</label>
+                                <p style="color: #0c0d0e; font-size: 16px; font-weight: bold; margin-top: 5px;">&nrightarrow; Boros Items</p>
+                                <p style="color: #0c0d0e; font-size: 13px; font-weight: bold; margin-top: 5px;">&longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a href="#collapseThree" class="collapsed" data-toggle="collapse" data-parent="#accordion">
+                                    CREDITS WEB
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <label class="btn btn-info btn-block">Credits</label>
+                                <p style="color: #0c0d0e; font-size: 16px; font-weight: bold; margin-top: 5px;">&nrightarrow; Credits (toll)s</p>
+                                <p style="color: #0c0d0e; font-size: 13px; font-weight: bold; margin-top: 5px;">&longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                    &longrightarrow; Lorem Ipsum <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

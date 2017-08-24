@@ -1,0 +1,23 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header">
+			<h3>Tools</h3>
+
+			<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-3">
+				<a class="btn btn-primary" href="<?php echo e(action('Admin\ToolsController@getSendItem')); ?>">Send Item</a>
+			</div>
+
+			<div class="col-sm-3">
+				<a class="btn btn-primary" href="<?php echo e(action('Admin\ToolsController@getInventory')); ?>">Search Player Inventory</a>
+			</div>
+		</div>
+
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

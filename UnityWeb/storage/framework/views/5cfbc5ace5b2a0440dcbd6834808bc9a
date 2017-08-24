@@ -1,0 +1,86 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header">
+			<h3>Webshop
+				<small><a class="btn btn-primary btn-sm pull-right" href="<?php echo e(action('Admin\WebshopController@create')); ?>">Add Item</a></small>
+			</h3>
+
+			<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+
+	<div class="col-sm-12 col-md-12 mbt">
+
+		<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<div class="col-sm-12 mbt">
+			<form action="<?php echo e(action('Admin\WebshopController@index')); ?>" method="GET" class="pull-right">
+				<div class="form-inline">
+					<input type="text" name="itemname" value="<?php echo e(Input::get('itemname')); ?>" placeholder="Search by itemname" class="form-control">
+					<input type="submit" value="Search" class="btn btn-primary">
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ITEMID</th>
+					<th>Level</th>
+					<th>Name</th>
+					<th>Type</th>
+					<th>Enchant</th>
+					<th>Temperance</th>
+					<th>Category</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>Image ID</th>
+					<th class="text-center">Action</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<?php foreach($items as $item): ?>
+					<tr>
+						<td><a href="http://aiondatabase.net/us/item/<?php echo e($item->item_id); ?>" target="_blank"><?php echo e($item->item_id); ?></a></td>
+						<td><?php echo e($item->level); ?></td>
+						<td><a href="http://aiondatabase.net/us/item/<?php echo e($item->item_id); ?>" target="_blank"><?php echo e($item->name); ?></a></td>
+                        <td><?php echo e($item->type); ?></td>
+						<td><?php echo e($item->enchant); ?></td>
+						<td><?php echo e($item->temperance); ?></td>
+						<td><?php echo e($item->cat_name); ?></td>
+						<td><?php echo e($item->amount); ?></td>
+						<td><?php echo e($item->price); ?></td>
+				        <td><img src="http://aiondatabase.net/items/<?php echo e($item->image_id); ?>"></td>
+						<td class="text-center">
+							<div class="btn-group">
+							  <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+							    Action <span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu" role="menu">
+							    <li><a href="<?php echo e(action('Admin\WebshopController@edit', $item->id)); ?>">Edit</a></li>
+							    <li><a href="<?php echo e(action('Admin\WebshopController@destroy', $item->id)); ?>" data-method="delete" data-remote="true" data-confirm="Are you sure you want to delete item <?php echo e($item->name); ?>?" class="destroy-btn">Delete</a></li>
+							  </ul>
+							</div>
+						</td>
+					</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+
+		<div class="pull-right">
+			<?php if(! empty(Input::get('itemname'))): ?>
+				<?php echo $items->appends(['itemname' => Input::get('itemname')])->render(); ?>
+
+			<?php else: ?>
+				<?php echo $items->render(); ?>
+
+			<?php endif; ?>
+		</div>
+
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

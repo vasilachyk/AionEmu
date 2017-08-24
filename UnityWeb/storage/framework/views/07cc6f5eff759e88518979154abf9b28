@@ -1,0 +1,159 @@
+<?php $__env->startSection('content'); ?>
+
+    <section class="content-wrap">
+        <div class="iplay-banner banner-top iplay-banner-parallax small">
+            <div class="image" style="background-image: url('<?php echo e(asset ('images/banner-bg.jpg')); ?>')"></div>
+
+            <div class="info">
+                <div>
+                    <div class="container">
+                        <h1>Aion Online <br>Dark Betrayal</h1>
+                        <em>"Game Download Free"</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container iplay-content">
+            
+            <h2 class="h3">Client Download</h2>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#client1" aria-expanded="true" aria-controls="client1">Host Google Drive &nbsp;<span class="label pull-right">416.71 KB</span></a>
+                            </h4>
+                        </div>
+                        <div id="client1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="client1">
+                            <div class="panel-body">
+                                Link 1 : <a href="https://drive.google.com/open?id=0B-a_t4f_3mboVVVuMXg2RjZub0U" target="_blank">Client Via U-Torrent</a><br>
+                                Link 2 : <a href="https://drive.google.com/open?id=0B-a_t4f_3mboVVVuMXg2RjZub0U" target="_blank">Client Via U-Torrent</a><br>
+                                Link 3 : <a href="https://drive.google.com/open?id=0B-a_t4f_3mboVVVuMXg2RjZub0U" target="_blank">Client Via U-Torrent</a><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#client2" aria-expanded="true" aria-controls="client2">Host MediaFire &nbsp;<span class="label pull-right">416.71 KB</span></a>
+                            </h4>
+                        </div>
+                        <div id="client2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="client2">
+                            <div class="panel-body">
+                                Link 1 : <a href="http://www.mediafire.com/download/gidyfhe9whhb3iw/aion48.torrent" target="_blank">Client Via U-Torrent</a><br>
+                                Link 2 : <a href="http://www.mediafire.com/download/gidyfhe9whhb3iw/aion48.torrent" target="_blank">Client Via U-Torrent</a><br>
+                                Link 3 : <a href="http://www.mediafire.com/download/gidyfhe9whhb3iw/aion48.torrent" target="_blank">Client Via U-Torrent</a><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#client3" aria-expanded="true" aria-controls="client3">Host Dropbox &nbsp;<span class="label pull-right">416.71 KB</span></a>
+                            </h4>
+                        </div>
+                        <div id="client3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="client3">
+                            <div class="panel-body">
+                                Link 1 : <a href="https://www.dropbox.com/s/gi88bn5dldmluti/aion48.torrent?dl=0" target="_blank">Client Via U-Torrent</a><br>
+                                Link 2 : <a href="https://www.dropbox.com/s/gi88bn5dldmluti/aion48.torrent?dl=0" target="_blank">Client Via U-Torrent</a><br>
+                                Link 3 : <a href="https://www.dropbox.com/s/gi88bn5dldmluti/aion48.torrent?dl=0" target="_blank">Client Via U-Torrent</a><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#tut-install" aria-expanded="true" aria-controls="tut-install">Tutorial Install <span class="label pull-right">Via Utorrent</span></a>
+                            </h4>
+                        </div>
+                        <div id="tut-install" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tut-install">
+                            <div class="panel-body">
+                                <h4>Tutorial Install Client Aion</h4><br>
+                                - Download salah satu aion48.torrent pada link di atas. <br>
+                                - Setelah anda download silahkan Download Utorrent di <a href="http://www.utorrent.com/intl/en/downloads/complete/track/stable/os/windows" target="_blank">sini</a>.<br>
+                                - Install utorrent yang sudah anda download tadi.<br>
+                                - Setelah selesai, buka utorrent yang ada di desktop anda.<br>
+                                - Pergi ke File -> Add Torrent. <br>
+                                - Pilih file aion48.torrent yang sudah anda download di atas.<br>
+                                - Tunggu Proses installisasi hingga selesai.<br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="container iplay-content">
+            
+            <h2 class="h3">Launcher Download</h2>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFive">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#launcher1" aria-expanded="true" aria-controls="launcher1">Host Google Drive &nbsp;<span class="label pull-right">8.91 MB</span></a>
+                            </h4>
+                        </div>
+                        <div id="launcher1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="launcher1">
+                            <div class="panel-body">
+                                Link 1 : <a href="#" target="_blank">Launcher Aion I-Play</a><br>
+                                Link 2 : <a href="#" target="_blank">Launcher Aion I-Play</a><br>
+                                Link 3 : <a href="#" target="_blank">Launcher Aion I-Play</a><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingSix">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#launcher2" aria-expanded="true" aria-controls="launcher2">Host Mediafire &nbsp;<span class="label pull-right">8.91 MB</span></a>
+                            </h4>
+                        </div>
+                        <div id="launcher2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="launcher2">
+                            <div class="panel-body">
+                                Link 1 : <a href="#" target="_blank">Launcher Aion I-Play</a><br>
+                                Link 2 : <a href="#" target="_blank">Launcher Aion I-Play</a><br>
+                                Link 3 : <a href="#" target="_blank">Launcher Aion I-Play</a><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingSeven">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#launcher3" aria-expanded="true" aria-controls="launcher3">Host Dropbox &nbsp;<span class="label pull-right">8.91 MB</span></a>
+                            </h4>
+                        </div>
+                        <div id="launcher3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="launcher3">
+                            <div class="panel-body">
+                                Link 1 : <a href="#" target="_blank">Launcher Aion I-Play</a><br>
+                                Link 2 : <a href="#" target="_blank">Launcher Aion I-Play</a><br>
+                                Link 3 : <a href="#" target="_blank">Launcher Aion I-Play</a><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingEight">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#tut-launch" aria-expanded="true" aria-controls="tut-launch">Tutorial Launching Aion &nbsp;<span class="label pull-right">Zip/Rar</span></a>
+                            </h4>
+                        </div>
+                        <div id="tut-launch" class="panel-collapse collapse" role="tabpanel" aria-labelledby="tut-launch">
+                            <div class="panel-body">
+                                <h4>Tutorial Extract and Launching Aion I-Play</h4>
+                                - Download file laucher yang sudah di sediakan di atas.<br>
+                                - Pilih salah satu , kemudian download.<br>
+                                - Setelah selesai download, pergi ke folder Aion.<br>
+                                - Extract File menggunakan <a href="http://winrar.com">Winrar</a>.<br>
+                                - Apabila anda tidak memiliki client aion silahkan <a href="<?php echo e(asset ('HomeController@download')); ?>">Download</a> terlebih dahulu.<br>
+                                - jalankan Aion I-Play Launcher.exe.<br>
+                                - dan Selamat Bermain <li class="fa fa-smile-o"></li><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+</section>
+        
+        
+        <?php echo $__env->make('footer.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

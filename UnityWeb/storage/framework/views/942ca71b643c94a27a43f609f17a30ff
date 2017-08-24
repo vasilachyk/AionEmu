@@ -1,0 +1,35 @@
+<?php $__env->startSection('content'); ?>
+
+	<section class="content-wrap full iplay-login">
+        <div class="iplay-banner banner-top">
+            <div class="image" style="background-image: url('<?php echo e(asset ('images/banner.png')); ?>')"></div>
+                <div class="info">
+                    <div>
+                        <div class="container align-center">
+                            <div class="iplay-form">
+                                <h1>Login</h1>
+                                
+	                            <?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	                            <form method="POST" action="<?php echo e(action('Auth\AuthController@postLogin')); ?>">
+                                    <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+
+                                    <div class="iplay-input">
+                                        <input required type="text" name="name" placeholder="Username" minlength="4" maxlength="16" value="">
+                                    </div>
+                                    <div class="iplay-input">
+                                        <input required type="password" name="password" placeholder="Password" minlength="6" maxlength="16" value="">
+                                    </div>
+                                    <button type="submit" value="Login" class="btn btn-default db">Login</button>
+                                    &nbsp;
+                                    <a href="<?php echo e(action('Auth\AuthController@getForgotPassword')); ?>">Forgot Your Password?</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

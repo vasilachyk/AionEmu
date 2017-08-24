@@ -1,0 +1,12 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="page-header">
+		<h4>DONATE / SUPER REWARDS <?php echo $__env->make('includes.toll', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></h4>
+	</div>
+
+	<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	<iframe src="https://wall.superrewards.com/super/offers?h=<?php echo e(Settings::payment()->super_rewards_public_key); ?>&uid=<?php echo e(Auth::user()->id); ?>" frameborder="0" width="531" height="800" scrolling="no"></iframe>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,63 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="page-header">
+		<h4>RANKING / KINAH</h4>
+	</div>
+
+	<?php echo $__env->make('includes.crumbs-ranking', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	<?php if( ! $players->isEmpty()): ?>
+
+	<div class="col-sm-12 rbm">
+		<div class="row">
+			<div class="pull-right">
+				<form action="<?php echo e(action('RankingController@getKinah')); ?>" method="GET">
+					<div class="form-inline">
+						<select name="filterby" class="form-control">
+							<option value="all" <?php echo e(be_selected(Input::get('filterby'), 'all')); ?>>All</option>
+							<option value="ely" <?php echo e(be_selected(Input::get('filterby'), 'ely')); ?>>Elyos</option>
+							<option value="asmo" <?php echo e(be_selected(Input::get('filterby'), 'asmo')); ?>>Asmodian</option>
+						</select>
+						<input type="submit" value="Filter" class="btn btn-primary">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<td>Number</td>
+				<td>Name</td>
+				<td>Kinah</td>
+				<td>Level</td>
+				<td>Race</td>
+				<td>Class</td>
+				<td>Sex</td>
+				<td>Status</td>
+			</tr>
+		</thead>
+
+		<tbody>
+			<?php foreach($players as $index => $player): ?>
+			<tr>
+				<td><?php echo e($index + 1); ?></td>
+				<td><a href="<?php echo e(action('HomeController@player', $player->id)); ?>"><?php echo e($player->name); ?></a></td>
+				<td><?php echo e(number_format($player->item_count, 0,' ',',')); ?></td>
+				<td><?php echo char_exptolevel($player->exp); ?></td>
+				<td><?php echo char_race($player->race); ?></td>
+				<td><?php echo char_class($player->player_class); ?></td>
+				<td><?php echo char_gender($player->gender); ?></td>
+				<td><?php echo char_online($player->online); ?></td>
+			</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+	<?php else: ?>
+		No Rich Players.
+	<?php endif; ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,98 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header">
+			<h3>Webshop Edit Item</h3>
+
+			<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+
+		<form action="<?php echo e(action('Admin\WebshopController@update', $item->id)); ?>" method="POST">
+			<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+			<input type="hidden" name="_method" value="PUT">
+
+			<div class="row">
+				<div class="col-sm-12 col-md-3">
+					<div class="form-group">
+						<label>Item ID</label>
+						<input type="text" name="itemid" id="wsitemid" value="<?php echo e($item->item_id); ?>" class="form-control">
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-3">
+					<div class="form-group">
+						<label>Name</label>
+						<input type="text" name="name" value="<?php echo e($item->name); ?>" class="form-control">
+					</div>
+				</div>
+				
+				<div class="col-sm-12 col-md-3">
+				    <div class="form-group">
+				        <label>Type</label>
+				        <input type="text" name="type" value="<?php echo e($item->type); ?>" class="form-control">
+				    </div>
+				</div>
+
+				<div class="col-sm-12 col-md-3">
+					<div class="form-group">
+						<label>Level</label>
+						<input type="text" name="level" value="<?php echo e($item->level); ?>" class="form-control">
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-3">
+					<div class="form-group">
+						<label>Amount / Quantity</label>
+						<input type="text" name="amount" value="<?php echo e($item->amount); ?>" class="form-control">
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-3">
+					<div class="form-group">
+						<label>Enchant</label>
+						<input type="text" name="enchant" value="<?php echo e($item->enchant); ?>" class="form-control">
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-3">
+					<div class="form-group">
+						<label>Temperance</label>
+						<input type="text" name="temperance" value="<?php echo e($item->temperance); ?>" class="form-control">
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-3">
+					<div class="form-group">
+						<label>Price / Credit Points / Toll</label>
+						<input type="text" name="price" value="<?php echo e($item->price); ?>" class="form-control">
+					</div>
+				</div>
+
+				<div class="col-sm-12 col-md-3">
+					<div class="form-group">
+						<label>Category</label>
+						<select class="form-control" name="category">
+							<option value="-1">-- Select Category --</option>
+							<?php foreach($shopCategory as $category): ?>
+								<option value="<?php echo e($category->id); ?>" <?php echo e(be_selected($item->category_id, $category->id)); ?>><?php echo e($category->name); ?></option>
+							<?php endforeach; ?>
+						</select>
+					</div>
+				</div>
+				
+				<div class="col-sm-12 col-md-3">
+				    <div class="form-group">
+				        <label>Image ID</label>
+				        <input type="text" class="form-control" name="image_id" value="<?php echo e($item->image_id); ?>">
+				    </div>
+				</div>
+
+				<div class="col-sm-12 col-md-12">
+					<input type="submit" value="Update Item" class="btn btn-primary pull-right">
+				</div>
+			</div>
+		</form>
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

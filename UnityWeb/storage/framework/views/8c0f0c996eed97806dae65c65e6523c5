@@ -1,0 +1,26 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="page-header">
+		<h4>VOTE <?php echo $__env->make('includes.vote', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></h4>
+	</div>
+
+	<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	<?php if( ! $sites->isEmpty()): ?>
+	<div class="vmessage"></div>
+
+	<div class="row">
+		<?php foreach($sites as $site): ?>
+			<div class="col-sm-12 col-md-4 text-center vm">
+				<div>
+					<a class="vpsite" href="<?php echo e(action('VoteController@postSite', $site->id)); ?>" data-remote="true" data-type="json" data-method="POST" data-params="sid=<?php echo e($site->id); ?>"><img class="vp-blur" src="<?php echo e($site->banner_url); ?>" title="<?php echo e($site->name); ?>"></a>
+				</div>
+			</div>
+		<?php endforeach; ?>
+	</div>
+	<?php else: ?>
+		No Vote Sites Available
+	<?php endif; ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,57 @@
+<?php $__env->startSection('content'); ?>
+
+<section class="content-wrap">
+    <div class="iplay-banner banner-top iplay-banner-parallax small">
+        <div class="image" style="background-image: url('<?php echo e(asset ('images/assault.jpg')); ?>')"></div>
+
+        <div class="info">
+            <div>
+                <div class="container">
+                    <h1>Aion Online <br>Assault of Balaurea</h1>
+                    <em>"Char Ban"</em>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container iplay-content">
+
+	<?php echo $__env->make('includes.crumbs-account', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        &nbsp;
+
+	<?php if( ! $bans->isEmpty()): ?>
+
+	<table class="table table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>Player</th>
+				<th>Ban Type</th>
+				<th>Ban Start</th>
+				<th>Ban End</th>
+				<th>Reason</th>
+				<th>Banned By</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<?php foreach($bans as $banned): ?>
+			<tr>
+				<td><a href="<?php echo e(action('HomeController@player', $banned->id)); ?>"><?php echo e($banned->name); ?></a></td>
+				<td><?php echo e($banned->punishment_type); ?></td>
+				<td><?php echo e(Carbon::createFromTimeStamp($banned->start_time)->diffForHumans()); ?></td>
+				<td><?php echo e($banned->duration == 2147483647 ? 'Permanent' : seconds_to_time($banned->duration)); ?></td>
+				<td><?php echo e($banned->reason); ?></td>
+				<th><?php echo e($banned->banned_by); ?></th>
+			</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+	<?php else: ?>
+		You have no characters that is banned.
+	<?php endif; ?>
+    </div>
+</section>
+
+<?php echo $__env->make('footer.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

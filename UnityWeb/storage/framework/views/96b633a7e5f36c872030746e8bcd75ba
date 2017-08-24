@@ -1,0 +1,107 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="page-header"><h4>INFORMATION</h4></div>
+
+	<div class="rb">
+
+		<b>Game Server:</b> <?php echo e(Status::gameServer('188.40.141.199', Settings::general()->port_game)); ?> <br>
+		<b>Login Server:</b> <?php echo e(Status::loginServer('188.40.141.199', Settings::general()->port_login)); ?> <br>
+		<b>Online Players:</b> <?php echo e(Status::onlineCount()); ?> <br>
+		<b>Most Online Ever:</b> <?php echo e(Status::onlinePeakCount()); ?> <br>
+		<b>Most Online Last 24 Hours:</b>  <?php echo e(Status::onlinePeakCount24Hrs()); ?><br>
+		<b>Online Asmodians:</b> <?php echo e(Status::onlineAsmo()); ?> <br>
+		<b>Online Elyos:</b> <?php echo e(Status::onlineEly()); ?> <br>
+		<b>Total Accounts:</b> <?php echo e(Status::totalAccounts()); ?> <br>
+		<b>Total Players:</b> <?php echo e(Status::totalPlayers()); ?> <br>
+		<b>Total Legions:</b> <?php echo e(Status::totalLegions()); ?> <br>
+		<b>Asmodian Legions:</b> <?php echo e(Status::totalLegionsPerRace('ASMODIANS')); ?> <br>
+		<b>Elyos Legions:</b> <?php echo e(Status::totalLegionsPerRace('ELYOS')); ?> <br>
+		<b>GMs Online Now:</b> <?php echo e(Status::totalGmsOnline()); ?> <br>
+		<b>Total GMs:</b> <?php echo e(Status::totalGms()); ?> <br>
+		<b>Total Asmodians:</b> <?php echo e(Status::totalAsmo()); ?> <br>
+		<b>Total Elyos:</b> <?php echo e(Status::totalEly()); ?>
+
+		<br><br>
+
+		<div class="page-header"><h4>Total Players Per Class</h4></div>
+
+		<div class="row">
+			<?php foreach(Status::playerClass() as $class): ?>
+				<div class="col-sm-3">
+				<b><?php echo e($class == 'SPIRIT_MASTER' ? ucfirst(strtolower(str_replace('_', '', $class))) : ucfirst(strtolower($class))); ?></b> : <?php echo e(Status::totalPlayerCountPerClass($class)); ?>
+
+				</div>
+			<?php endforeach; ?>
+		</div>
+		<br>
+
+		<div class="page-header"><h4>Server Rates</h4></div>
+
+		<div class="row">
+			<div class="col-sm-4">
+				<b>Normal Rates:</b> <br>
+				Quest GP: x20 <br>
+				Gathering XP: x500 <br>
+				Gathering Count: x500  <br>
+				Crafting XP: x500 <br>
+				Pet Feeding: x150 <br>
+				Quest Kinah: x100 <br>
+				Quest AP: x100 <br>
+				Drop: x150  <br>
+				PvP AP: x10 <br>
+				PvE AP: x10 <br>
+				PvE GP: x10 <br>
+				PvE DP: x50 <br>
+				PvP Discipline Arena Reward: x15 <br>
+				PvP Chaos Arena Reward: x15 <br>
+				PvP Harmony Arena Reward: x15 <br> 
+				PvP Glory Arena Reward: x15 <br>
+				Sell Limits: x24 <br>
+			</div>
+
+			<div class="col-sm-4">
+				<b>Premium Rates:</b> <br>
+				Quest GP: x30 <br>
+				Gathering XP: x1000 <br>
+				Gathering Count: x1000  <br>
+				Crafting XP: x1000 <br>
+				Pet Feeding: x200 <br>
+				Quest Kinah: x200 <br>
+				Quest AP: x200 <br>
+				Drop: x175  <br>
+				PvP AP: x15 <br>
+				PvE AP: x15 <br>
+				PvE GP: x15 <br>
+				PvE DP: x75 <br>
+				PvP Discipline Arena Reward: x25 <br>
+				PvP Chaos Arena Reward: x25 <br>
+				PvP Harmony Arena Reward: x25 <br> 
+				PvP Glory Arena Reward: x25 <br>
+				Sell Limits: x34 <br>
+			</div>
+
+			<div class="col-sm-4">
+				<b>Vip Rates:</b> <br>
+				Quest GP: x40 <br>
+				Gathering XP: x1500 <br>
+				Gathering Count: x1500  <br>
+				Crafting XP: x1500 <br>
+				Pet Feeding: x250 <br>
+				Quest Kinah: x300 <br>
+				Quest AP: x300 <br>
+				Drop: x200  <br>
+				PvP AP: x25 <br>
+				PvE AP: x25 <br>
+				PvE GP: x25 <br>
+				PvE DP: x100 <br>
+				PvP Discipline Arena Reward: x35 <br>
+				PvP Chaos Arena Reward: x35 <br>
+				PvP Harmony Arena Reward: x35 <br> 
+				PvP Glory Arena Reward: x35 <br>
+				Sell Limits: x44 <br>
+			</div>
+		</div>
+	</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

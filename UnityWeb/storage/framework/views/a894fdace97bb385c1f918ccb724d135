@@ -1,0 +1,81 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header">
+			<h3>LOGS / TOOLS SENT ITEMS</h3>
+		</div>
+
+		<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<?php echo $__env->make('includes.crumbs-logs', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<div class="row">
+			<div class="col-sm-3 mbt pull-right text-right">
+				<form action="<?php echo e(action('Admin\LogController@getToolsSentItems')); ?>" method="GET">
+					<div class="form-inline">
+						<input type="text" name="account" value="<?php echo e(Input::get('account')); ?>" placeholder="Search by account" class="form-control">
+						<input type="submit" value="Search" class="btn btn-primary">
+					</div>
+				</form>
+			</div>
+
+			<div class="col-sm-3 mbt pull-right text-right">
+				<form action="<?php echo e(action('Admin\LogController@getToolsSentItems')); ?>" method="GET">
+					<div class="form-inline">
+						<input type="text" name="playerid" value="<?php echo e(Input::get('playerid')); ?>" placeholder="Search by playerid" class="form-control">
+						<input type="submit" value="Search" class="btn btn-primary">
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<?php if( ! $logs->isEmpty()): ?>
+			<table class="table  ">
+				<thead>
+					<tr>
+						<th>Item ID</th>
+						<th>Quantity</th>
+						<th>Enchant</th>
+						<th>Temperance</th>
+						<th>Sent Time</th>
+						<th>Sent To</th>
+						<th>Sender ID</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<?php foreach($logs as $log): ?>
+						<tr>
+							<td><a href="http://aiondatabase.net/us/item/<?php echo e($log->item_id); ?>" target="_blank"><?php echo e($log->item_id); ?></a></td>
+							<td><?php echo e($log->quantity); ?></td>
+							<td><?php echo e($log->enchant); ?></td>
+							<td><?php echo e($log->temperance); ?></td>
+							<td><?php echo e(Carbon::parse($log->sent_at)->diffForHumans()); ?></td>
+							<td><a href="<?php echo e(action('HomeController@player', $log->player_id)); ?>" target="_blank"><?php echo e($log->player_id); ?></a></td>
+							<td><a href="<?php echo e(action('Admin\AccountController@index', ['accountid' => $log->sender])); ?>" target="_blank"><?php echo e($log->name); ?></a></td>
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+			</table>
+
+			<div class="pull-right">
+				<?php if(! empty(Input::get('account'))): ?>
+					<?php echo $logs->appends(['account' => Input::get('account')])->render(); ?>
+
+				<?php elseif(! empty(Input::get('playerid'))): ?>
+					<?php echo $logs->appends(['playerid' => Input::get('playerid')])->render(); ?>
+
+				<?php else: ?>
+					<?php echo $logs->render(); ?>
+
+				<?php endif; ?>
+			</div>
+		<?php else: ?>
+			No data available.
+		<?php endif; ?>
+
+	</div>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

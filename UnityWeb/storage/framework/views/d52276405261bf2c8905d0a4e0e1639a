@@ -1,0 +1,55 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header">
+			<h3>Membership</h3>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-8">
+				<?php echo $__env->make('admin.includes.memberships', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+			</div>
+
+			<div class="col-sm-4 well">
+
+				<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+				<form action="<?php echo e(action('Admin\MembershipController@postEdit', $membership->id)); ?>" method="POST">
+					<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+
+					<div class="form-group">
+						<label>Title</label>
+						<input type="text" name="title" class="form-control" value="<?php echo e($membership->title); ?>">
+					</div>
+
+					<div class="form-group">
+						<label>Type</label>
+						<select name="type" class="form-control">
+							<option value="-1">-- Select Type --</option>
+							<?php foreach($categories as $category): ?>
+								<option value="<?php echo e($category->id); ?>" <?php echo e($category->id == $membership->type ? 'selected="selected"': ''); ?>><?php echo e($category->type); ?></option>
+							<?php endforeach; ?>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label>Duration (Days)</label>
+						<input type="text" name="duration" class="form-control" value="<?php echo e($membership->duration); ?>">
+					</div>
+
+					<div class="form-group">
+						<label>Price</label>
+						<input type="text" name="price" class="form-control" value="<?php echo e($membership->price); ?>">
+					</div>
+
+					<div class="form-group">
+						<input type="submit" name="submit" value="Update Privileges" class="btn btn-primary">
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

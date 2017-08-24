@@ -1,0 +1,124 @@
+ <?php $__env->startSection('content'); ?>
+
+<section class="iplay-banner banner-top iplay-banner-parallax">
+    <div class="image" style="background-image: url('<?php echo e(asset ('images/banner.png')); ?>"></div>
+
+    <div class="info">
+        <div>
+            <div class="container">
+                <h1>Aion Online <br>Tower Of Eternity</h1>
+                <em>"Truly Free To Play"</em>
+                <br>
+                <br>
+                <br>
+                <a class="btn btn-lg" href="<?php echo e(action('HomeController@download')); ?>">Download-Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="iplay-carousel" data-autoplay="5000">
+    <a class="angled-img" href="#!">
+        <div class="img">
+            <img src="<?php echo e(asset ('images/leveling.jpg')); ?>" alt="">
+        </div>
+        <div class="over-info">
+            <div>
+                <div>
+                    <h4>Leveling System</h4>
+                    <div class="rating">
+                        Exp Rate : 5x
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a class="angled-img" href="#!">
+        <div class="img">
+            <img src="<?php echo e(asset ('images/pvp.jpg')); ?>" alt="">
+        </div>
+        <div class="over-info">
+            <div>
+                <div>
+                    <h4>PVP System</h4>
+                    <div class="rating">
+                        AP Rate : 2x
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a class="angled-img" href="#!">
+        <div class="img">
+            <img src="<?php echo e(asset ('images/dungeon.jpg')); ?>" alt="">
+        </div>
+        <div class="over-info">
+            <div>
+                <div>
+                    <h4>Dungeon / Istance Active</h4>
+                    <div class="rating">
+                        Drop Rate : 10x
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a class="angled-img" href="#!">
+        <div class="img">
+            <img src="<?php echo e(asset ('images/war.jpg')); ?>" alt="">
+        </div>
+        <div class="over-info">
+            <div>
+                <div>
+                    <h4>War System</h4>
+                    <div class="rating">
+                        Every Maps
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a class="angled-img" href="#!">
+        <div class="img">
+            <img src="<?php echo e(asset ('images/start.jpg')); ?>" alt="">
+        </div>
+        <div class="over-info">
+            <div>
+                <div>
+                    <h4>With Start Pack 65</h4>
+                    <div class="rating">
+                        Get Equipment after leveling 65
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<h2 class="container h1">Latest News</h2>
+<section class="iplay-news container">
+    <div class="news-content">
+        <div id="iplay">
+            <?php if( ! $news->isEmpty()): ?> <?php foreach($news as $content): ?>
+            <h3>&#9679; <a><?php echo e($content->title); ?></a></h3>
+            <div class="news-category">
+                <a><?php echo e($content->catTitle); ?></a>
+            </div>
+            <div class="content-news">
+                <?php echo $content->content; ?>
+
+            </div>
+            <span>
+                Created By: <?php echo e($content->createdby_name); ?>
+
+            </span> 
+            <span>
+                <i class="fa fa-calendar"></i>
+                <?php echo e(to_human_date($content->created_at)); ?>
+
+            </span>
+            <?php endforeach; ?> <?php else: ?> No news available. <?php endif; ?>
+        </div>
+    </div>
+</section>
+
+<?php echo $__env->make('footer.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> <?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

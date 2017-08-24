@@ -1,0 +1,21 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header">
+			<h3>Ban System</h3>
+
+			<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<a class="btn btn-primary" href="<?php echo e(action('Admin\BanController@getPlayer')); ?>">Player</a>
+				<a class="btn btn-primary" href="<?php echo e(action('Admin\BanController@getBannedIp')); ?>">IP</a>
+				<a class="btn btn-primary" href="<?php echo e(action('Admin\BanController@getBannedMac')); ?>">Mac</a>
+			</div>
+		</div>
+
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

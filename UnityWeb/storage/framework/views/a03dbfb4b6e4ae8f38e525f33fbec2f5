@@ -1,0 +1,44 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header"><h3>Webshop Category Edit</h3></div>
+
+		<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	</div>
+
+	<form action="<?php echo e(action('Admin\WebshopCategoryController@update', $category->id)); ?>" method="POST">
+		<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+		<input type="hidden" name="_method" value="PUT">
+
+		<div class="col-sm-12 col-md-4">
+			<div class="form-group">
+				<label>Name</label>
+				<input type="text" name="name" class="form-control" value="<?php echo e($category->name); ?>" id="slug-source">
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-4">
+			<div class="form-group">
+				<label>Slug</label>
+				<input type="text" name="slug" class="form-control" value="<?php echo e($category->slug); ?>" id="slug-target" readonly="readonly">
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-4">
+			<div class="form-group">
+				<label>Status</label>
+				<select name="status" class="form-control">
+					<option>-- Select Status --</option>
+					<option value="0" <?php echo e(be_selected($category->status, 0)); ?>>Deactivated</option>
+					<option value="1" <?php echo e(be_selected($category->status, 1)); ?>>Activated</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-12">
+			<input type="submit" value="Update Category" class="btn btn-primary pull-right">
+		</div>
+	</form>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

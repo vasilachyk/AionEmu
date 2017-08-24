@@ -1,0 +1,42 @@
+<?php $__env->startSection('content'); ?>
+
+    <section class="hero hero-games height-300" style="background-image: url(<?php echo e(asset('images/costume.jpg')); ?>);">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="page-header">
+                <div class="page-title bold"><a href="http://aiondatabase.net/us/item/<?php echo e($item->item_id); ?>" target="_blank">Purchase Items : <?php echo e($item->name); ?></a></div>
+                <p style="text-transform: uppercase">Items Count : <?php echo e($item->amount); ?> pcs * Enchant : <?php echo e($item->enchant > 0 ? '+'. $item->enchant : 'N/A'); ?> * Temperance : <?php echo e($item->temperance > 0 ? '+'. $item->temperance : 'N/A'); ?> * Item Type : <?php echo e($item->type); ?> * Item Level : <?php echo e($item->level); ?></p>
+                <div class="page-title bold" style="font-size: 18px"><?php echo Helper::webshop_discount($item->price, Auth::user()->membership, Auth::user()->expire); ?>.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary subtitle-lg">
+		 <?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div class="container">
+            <h2>Are you sure about purchase this items..</h2>
+            <?php if( ! $players->isEmpty()): ?>
+            <form class="form-horizontal" action="<?php echo e(action('WebshopController@postPurchase')); ?>" method="POST" data-confirm="Are you sure you want to purchase this item?">
+                <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                <input type="hidden" name="itemid" value="<?php echo e($item->id); ?>">
+				<p>Select Character First</p>
+                <div class="form-group">
+                    <div class="col-sm-8 options-style">
+                        <select name="player" class="styled-select">
+                            <option value="-1">-- N/A --</option>
+                            <?php foreach($players as $player): ?>
+                                <option value="<?php echo e($player->id); ?>"><?php echo e($player->name); ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+				<button type="submit" class="btn btn-white btn-outline">Purchase Now<i class="fa fa-shopping-cart margin-left-10"></i></button>
+            </form>
+            <?php else: ?> <p>You have no characters on this account. <br> Create Character First !<br></p>
+            <?php endif; ?>
+            <p>Current Credits : <?php echo $__env->make('includes.toll', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></p>
+        </div>
+    </section>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

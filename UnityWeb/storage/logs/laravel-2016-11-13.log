@@ -1,0 +1,122 @@
+[2016-11-13 01:25:19] production.INFO: voted ip : 36.70.204.178  
+[2016-11-13 01:49:34] production.INFO: voted ip : 180.252.96.226  
+[2016-11-13 02:38:40] production.INFO: voted ip : 180.251.50.198  
+[2016-11-13 02:42:47] production.INFO: voted ip : 180.251.50.198  
+[2016-11-13 03:07:33] production.INFO: voted ip : 180.253.224.60  
+[2016-11-13 03:19:13] production.INFO: voted ip : 36.70.51.30  
+[2016-11-13 03:25:26] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 03:27:43] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 03:33:05] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 03:35:19] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 03:36:26] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 03:36:56] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 03:51:13] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 04:37:52] production.INFO: voted ip : 115.124.66.121  
+[2016-11-13 05:03:12] production.INFO: voted ip : 112.215.174.167  
+[2016-11-13 05:14:35] production.INFO: voted ip : 36.82.175.151  
+[2016-11-13 05:19:26] production.INFO: voted ip : 36.84.11.16  
+[2016-11-13 05:19:30] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 05:21:38] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 05:27:59] production.INFO: voted ip : 36.84.11.16  
+[2016-11-13 05:28:29] production.INFO: voted ip : 36.84.11.16  
+[2016-11-13 05:31:11] production.INFO: voted ip : 180.248.110.36  
+[2016-11-13 05:50:25] production.INFO: voted ip : 36.70.204.178  
+[2016-11-13 05:50:39] production.INFO: voted ip : 36.70.204.178  
+[2016-11-13 05:51:31] production.INFO: voted ip : 36.70.204.178  
+[2016-11-13 06:43:50] production.INFO: voted ip : 180.253.240.29  
+[2016-11-13 06:54:00] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 07:03:02] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 07:14:23] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 07:15:48] production.INFO: voted ip : 180.253.224.60  
+[2016-11-13 07:36:36] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 07:51:47] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 07:54:27] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 08:50:36] production.INFO: voted ip : 36.70.204.178  
+[2016-11-13 09:02:25] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 09:40:31] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 11:24:21] production.INFO: voted ip : 202.67.38.22  
+[2016-11-13 19:03:54] production.INFO: voted ip : 36.70.204.178  
+[2016-11-13 19:45:34] production.INFO: voted ip : 120.188.76.149  
+[2016-11-13 19:47:43] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 19:50:06] production.INFO: voted ip : 36.70.204.178  
+[2016-11-13 20:07:07] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 20:36:53] production.INFO: voted ip : 36.70.201.218  
+[2016-11-13 20:46:09] production.INFO: voted ip : 202.152.33.247  
+[2016-11-13 21:06:23] production.INFO: voted ip : 120.188.76.149  
+[2016-11-13 21:06:32] production.INFO: voted ip : 120.188.76.149  
+[2016-11-13 21:34:06] production.INFO: voted ip : 103.19.81.76  
+[2016-11-13 21:38:29] production.INFO: voted ip : 202.152.33.247  
+[2016-11-13 21:41:06] production.INFO: voted ip : 103.19.81.76  
+[2016-11-13 21:43:23] production.INFO: voted ip : 202.152.33.247  
+[2016-11-13 21:44:28] production.INFO: voted ip : 202.152.33.247  
+[2016-11-13 21:48:51] production.INFO: voted ip : 36.77.137.0  
+[2016-11-13 21:49:39] production.INFO: voted ip : 103.19.81.76  
+[2016-11-13 21:52:47] production.INFO: voted ip : 103.19.81.76  
+[2016-11-13 22:01:06] production.INFO: voted ip : 36.77.137.0  
+[2016-11-13 22:05:37] production.INFO: voted ip : 36.77.137.0  
+[2016-11-13 22:39:32] production.INFO: voted ip : 103.19.81.76  
+[2016-11-13 22:45:24] production.INFO: voted ip : 120.188.76.149  
+[2016-11-13 22:45:25] production.INFO: voted ip : 120.188.76.149  
+[2016-11-13 23:14:37] production.INFO: voted ip : 120.188.76.149  
+[2016-11-13 23:21:30] production.INFO: voted ip : 36.77.137.0  
+[2016-11-13 23:27:40] production.ERROR: exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in E:\WEBAION\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php:55
+Stack trace:
+#0 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php(55): PDO->__construct('mysql:host=loca...', 'root', 'Hckd123', Array)
+#1 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Database\Connectors\MySqlConnector.php(22): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#2 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Database\Connectors\ConnectionFactory.php(60): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#3 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Database\Connectors\ConnectionFactory.php(49): Illuminate\Database\Connectors\ConnectionFactory->createSingleConnection(Array)
+#4 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php(175): Illuminate\Database\Connectors\ConnectionFactory->make(Array, 'aionls')
+#5 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Database\DatabaseManager.php(67): Illuminate\Database\DatabaseManager->makeConnection('aionls')
+#6 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(3268): Illuminate\Database\DatabaseManager->connection('aionls')
+#7 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(3234): Illuminate\Database\Eloquent\Model::resolveConnection('aionls')
+#8 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1914): Illuminate\Database\Eloquent\Model->getConnection()
+#9 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1857): Illuminate\Database\Eloquent\Model->newBaseQueryBuilder()
+#10 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(1831): Illuminate\Database\Eloquent\Model->newQueryWithoutScopes()
+#11 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(3480): Illuminate\Database\Eloquent\Model->newQuery()
+#12 E:\WEBAION\app\Repositories\SettingsRepository.php(40): Illuminate\Database\Eloquent\Model->__call('find', Array)
+#13 E:\WEBAION\app\Repositories\SettingsRepository.php(40): App\Models\RoutesAccess->find(1)
+#14 E:\WEBAION\app\FacadesClass\SiteSettings.php(28): App\Repositories\SettingsRepository->getRoutesAccess()
+#15 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(213): App\FacadesClass\SiteSettings->access()
+#16 E:\WEBAION\app\Http\routes.php(23): Illuminate\Support\Facades\Facade::__callStatic('access', Array)
+#17 E:\WEBAION\app\Http\routes.php(23): App\Facades\SiteSettings::access()
+#18 [internal function]: App\Providers\RouteServiceProvider->{closure}(Object(Illuminate\Routing\Router))
+#19 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Routing\Router.php(358): call_user_func(Object(Closure), Object(Illuminate\Routing\Router))
+#20 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(219): Illuminate\Routing\Router->group(Array, Object(Closure))
+#21 E:\WEBAION\app\Http\routes.php(42): Illuminate\Support\Facades\Facade::__callStatic('group', Array)
+#22 E:\WEBAION\app\Http\routes.php(42): Illuminate\Support\Facades\Route::group(Array, Object(Closure))
+#23 E:\WEBAION\app\Providers\RouteServiceProvider.php(41): require('E:\\WEBAION\\app\\...')
+#24 [internal function]: App\Providers\RouteServiceProvider->App\Providers\{closure}(Object(Illuminate\Routing\Router))
+#25 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Routing\Router.php(358): call_user_func(Object(Closure), Object(Illuminate\Routing\Router))
+#26 E:\WEBAION\app\Providers\RouteServiceProvider.php(42): Illuminate\Routing\Router->group(Array, Object(Closure))
+#27 [internal function]: App\Providers\RouteServiceProvider->map(Object(Illuminate\Routing\Router))
+#28 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Container\Container.php(503): call_user_func_array(Array, Array)
+#29 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Foundation\Support\Providers\RouteServiceProvider.php(72): Illuminate\Container\Container->call(Array)
+#30 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Foundation\Support\Providers\RouteServiceProvider.php(30): Illuminate\Foundation\Support\Providers\RouteServiceProvider->loadRoutes()
+#31 E:\WEBAION\app\Providers\RouteServiceProvider.php(29): Illuminate\Foundation\Support\Providers\RouteServiceProvider->boot(Object(Illuminate\Routing\Router))
+#32 [internal function]: App\Providers\RouteServiceProvider->boot(Object(Illuminate\Routing\Router))
+#33 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Container\Container.php(503): call_user_func_array(Array, Array)
+#34 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(734): Illuminate\Container\Container->call(Array)
+#35 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(717): Illuminate\Foundation\Application->bootProvider(Object(App\Providers\RouteServiceProvider))
+#36 [internal function]: Illuminate\Foundation\Application->Illuminate\Foundation\{closure}(Object(App\Providers\RouteServiceProvider), 16)
+#37 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(718): array_walk(Array, Object(Closure))
+#38 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Foundation\Bootstrap\BootProviders.php(17): Illuminate\Foundation\Application->boot()
+#39 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(203): Illuminate\Foundation\Bootstrap\BootProviders->bootstrap(Object(Illuminate\Foundation\Application))
+#40 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(222): Illuminate\Foundation\Application->bootstrapWith(Array)
+#41 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(117): Illuminate\Foundation\Http\Kernel->bootstrap()
+#42 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(87): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#43 E:\WEBAION\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#44 {main}  
+[2016-11-13 23:27:40] production.ERROR: exception 'RuntimeException' with message 'No supported encrypter found. The cipher and / or key length are invalid.' in E:\WEBAION\vendor\laravel\framework\src\Illuminate\Encryption\EncryptionServiceProvider.php:29
+Stack trace:
+#0 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Container\Container.php(734): Illuminate\Encryption\EncryptionServiceProvider->Illuminate\Encryption\{closure}(Object(Illuminate\Foundation\Application), Array)
+#1 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Container\Container.php(627): Illuminate\Container\Container->build(Object(Closure), Array)
+#2 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(674): Illuminate\Container\Container->make('encrypter', Array)
+#3 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Container\Container.php(838): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#4 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Container\Container.php(801): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Container\Container.php(772): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Container\Container.php(627): Illuminate\Container\Container->build('App\\Http\\Middle...', Array)
+#7 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(674): Illuminate\Container\Container->make('App\\Http\\Middle...', Array)
+#8 E:\WEBAION\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(142): Illuminate\Foundation\Application->make('App\\Http\\Middle...')
+#9 E:\WEBAION\public\index.php(58): Illuminate\Foundation\Http\Kernel->terminate(Object(Illuminate\Http\Request), Object(Illuminate\Http\Response))
+#10 {main}  
+[2016-11-13 23:38:53] production.INFO: voted ip : 36.79.188.177  

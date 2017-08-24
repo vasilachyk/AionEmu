@@ -1,0 +1,40 @@
+        <footer class="iplay-footer-parallax">
+            <div class="wrapper" style="background-image: url('<?php echo e(asset ('images/footer-bg.jpg')); ?>">
+                <div class="social">
+                    <div class="container">
+                        <h3>Gabung Bersama I-Play <strong>Comunity</strong></h3>
+                        <div class="social-icons">
+                            <div class="social-icon">
+                                <a href="https://www.facebook.com/iplaycommunity/?pnref=lhc" target="_blank">
+                                    <i class="fa fa-facebook-square"></i>
+                                    <span>Like on Facebook</span>
+                                </a>
+                            </div>
+                            <div class="social-icon">
+                                <a href="#!">
+                                    <i class="fa fa-twitter-square"></i>
+                                    <span>Follow on Twitter</span>
+                                </a>
+                            </div>
+                            <div class="social-icon">
+                                <a href="#!">
+                                    <i class="fa fa-twitch"></i>
+                                    <span>Watch on Twitch</span>
+                                </a>
+                            </div>
+                            <div class="social-icon">
+                                <a href="#!">
+                                    <i class="fa fa-youtube-square"></i>
+                                    <span>Watch on Youtube</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <div class="container">
+                        <strong>I-Play</strong> &copy; 2016. All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>

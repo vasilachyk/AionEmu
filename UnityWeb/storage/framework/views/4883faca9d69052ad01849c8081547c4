@@ -1,0 +1,19 @@
+<?php if(Session::has('success')): ?>
+	<p class="alert alert-success"><?php echo e(Session::get('success')); ?></p>
+	<?php echo e(Session::forget('success')); ?>
+
+<?php endif; ?>
+
+<?php if(Session::has('failure')): ?>
+	<p class="alert alert-danger"><?php echo e(Session::get('failure')); ?></p>
+	<?php echo e(Session::forget('failure')); ?>
+
+<?php endif; ?>
+
+<?php if( ! $errors->isEmpty()): ?>
+	<ul class="alert alert-danger">
+	<?php foreach($errors->all() as $error): ?>
+	    <li><?php echo e($error); ?></li>
+	<?php endforeach; ?>
+	</ul>
+<?php endif; ?>

@@ -1,0 +1,51 @@
+<?php $__env->startSection('content'); ?>
+
+	<section class="hero hero-panel" style="background-image: url(<?php echo e(asset('images/default-backgorund.jpg')); ?>);">
+		<div class="hero-bg"></div>
+		<div class="container">
+			<h3>Character Ban</h3>
+			<p>Account name : <?php echo e(Auth::user()->name); ?></p>
+
+			<div class="alert alert-warning alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				* See Your Character is<strong>Ban</strong>, Contact us for Reason.
+			</div>
+
+	<?php echo $__env->make('includes.crumbs-account', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        &nbsp;
+
+	<?php if( ! $bans->isEmpty()): ?>
+
+	<table class="table table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>Player</th>
+				<th>Ban Type</th>
+				<th>Ban Start</th>
+				<th>Ban End</th>
+				<th>Reason</th>
+				<th>Banned By</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<?php foreach($bans as $banned): ?>
+			<tr>
+				<td><a href="<?php echo e(action('HomeController@player', $banned->id)); ?>"><?php echo e($banned->name); ?></a></td>
+				<td><?php echo e($banned->punishment_type); ?></td>
+				<td><?php echo e(Carbon::createFromTimeStamp($banned->start_time)->diffForHumans()); ?></td>
+				<td><?php echo e($banned->duration == 2147483647 ? 'Permanent' : seconds_to_time($banned->duration)); ?></td>
+				<td><?php echo e($banned->reason); ?></td>
+				<th><?php echo e($banned->banned_by); ?></th>
+			</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+	<?php else: ?>
+		You have no characters that is banned.
+	<?php endif; ?>
+    </div>
+</section>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

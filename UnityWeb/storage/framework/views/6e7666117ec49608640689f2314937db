@@ -1,0 +1,32 @@
+<?php $__env->startSection('content'); ?>
+
+	<section class="content-wrap full iplay-login">
+        <div class="iplay-banner banner-top">
+            <div class="image" style="background-image: url('<?php echo e(asset ('images/banner.png')); ?>')"></div>
+                <div class="info">
+                    <div>
+                        <div class="container align-center">
+                            <div class="iplay-form">
+                                <h1>Login</h1>
+
+                                <?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+                                <form role="form" method="POST" action="<?php echo e(action('Auth\AuthController@postForgotPassword')); ?>">
+                                    <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                                    <div class="iplay-input">
+                                        <input type="text" name="name" class="form-control" value="" placeholder="Username">
+                                    </div>
+                                    <div class="iplay-input">
+                                        <input type="text" name="email" class="form-control" value="" placeholder="E-Mail">
+                                    </div>
+                                    <button type="submit" value="Send Password Reset Link" class="btn btn-primary" data-disable-with="Sending...">Send Password Reset Link</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

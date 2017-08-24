@@ -1,0 +1,134 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header"><h3>ACCOUNTS</h3></div>
+	</div>
+
+	<div class="col-sm-12 col-md-12 mbt">
+
+		<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<div class="row">
+			<div class="col-sm-3 mbt">
+				<form action="<?php echo e(action('Admin\AccountController@index')); ?>" method="GET">
+					<div class="form-inline">
+						<input type="text" name="accountid" value="<?php echo e(Input::get('accountid')); ?>" placeholder="Search by id" class="form-control">
+						<input type="submit" value="Search" class="btn btn-primary">
+					</div>
+				</form>
+			</div>
+
+			<div class="col-sm-3 mbt">
+				<form action="<?php echo e(action('Admin\AccountController@index')); ?>" method="GET">
+					<div class="form-inline">
+						<input type="text" name="account" value="<?php echo e(Input::get('account')); ?>" placeholder="Search by account" class="form-control">
+						<input type="submit" value="Search" class="btn btn-primary">
+					</div>
+				</form>
+			</div>
+
+			<div class="col-sm-3 mbt">
+				<form action="<?php echo e(action('Admin\AccountController@index')); ?>" method="GET">
+					<div class="form-inline">
+						<input type="text" name="email" value="<?php echo e(Input::get('email')); ?>" placeholder="Search by email" class="form-control">
+						<input type="submit" value="Search" class="btn btn-primary">
+					</div>
+				</form>
+			</div>
+
+			<div class="col-sm-3 mbt">
+				<form action="<?php echo e(action('Admin\AccountController@index')); ?>" method="GET">
+					<div class="form-inline">
+						<input type="text" name="mac" value="<?php echo e(Input::get('mac')); ?>" placeholder="Search by mac" class="form-control">
+						<input type="submit" value="Search" class="btn btn-primary">
+					</div>
+				</form>
+			</div>
+
+			<div class="col-sm-3 mbt">
+				<form action="<?php echo e(action('Admin\AccountController@index')); ?>" method="GET">
+					<div class="form-inline">
+						<input type="text" name="ip" value="<?php echo e(Input::get('ip')); ?>" placeholder="Search by ip" class="form-control">
+						<input type="submit" value="Search" class="btn btn-primary">
+					</div>
+				</form>
+			</div>
+
+			<div class="col-sm-6">
+				<form action="<?php echo e(action('Admin\AccountController@index')); ?>" method="GET">
+					<div class="form-inline">
+						<select name="privileges" class="form-control">
+							<option value="">-- Privileges --</option>
+							<option value="0" <?php echo e(be_selected(Input::get('privileges'), '0')); ?>>Normal</option>
+							<option value="1" <?php echo e(be_selected(Input::get('privileges'), '1')); ?> >Premium</option>
+							<option value="2" <?php echo e(be_selected(Input::get('privileges'), '2')); ?> >Vip</option>
+						</select>
+
+						<select name="permissions" class="form-control">
+							<option value="">-- Permissions --</option>
+							<option value="0" <?php echo e(be_selected(Input::get('permissions'), '0')); ?> ><?php echo account_access(0); ?></option>
+							<option value="1" <?php echo e(be_selected(Input::get('permissions'), '1')); ?> ><?php echo account_access(1); ?></option>
+							<option value="2" <?php echo e(be_selected(Input::get('permissions'), '2')); ?> ><?php echo account_access(2); ?></option>
+							<option value="3" <?php echo e(be_selected(Input::get('permissions'), '3')); ?> ><?php echo account_access(3); ?></option>
+							<option value="4" <?php echo e(be_selected(Input::get('permissions'), '4')); ?> ><?php echo account_access(4); ?></option>
+							<option value="5" <?php echo e(be_selected(Input::get('permissions'), '5')); ?> ><?php echo account_access(5); ?></option>
+						</select>
+
+						<input type="submit" value="Search" class="btn btn-primary">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<?php if( ! $accounts->isEmpty()): ?>
+
+	<div class="col-sm-12 col-md-12">
+		<table class="table  table-bordered text-center">
+			<thead>
+				<tr>
+					<th class="text-center">ID</th>
+					<th class="text-center">Account</th>
+					<th class="text-center">Status</th>
+					<th class="text-center">Last Ip</th>
+					<th class="text-center">Last Mac</th>
+					<th class="text-center">Permissions</th>
+					<th class="text-center">Privileges</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<?php foreach($accounts as $account): ?>
+				<tr>
+					<td><?php echo e($account->id); ?></td>
+					<td><a href="<?php echo e(action('Admin\AccountController@edit', $account->id)); ?>"><?php echo e($account->name); ?></a></td>
+					<td><?php echo account_activated($account->activated); ?></td>
+					<td><?php echo e($account->last_ip); ?></td>
+					<td><?php echo e($account->last_mac); ?></td>
+					<td><?php echo account_access($account->access_level); ?></td>
+					<td><?php echo e(account_privileges($account->membership, $account->expire)); ?></td>
+				</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+		<div class="pull-right">
+			<?php if(! empty(Input::get('account'))): ?>
+				<?php echo $accounts->appends(['account' => Input::get('account')])->render(); ?>
+
+			<?php elseif(Input::get('privileges') == '' || Input::get('privileges') == 0 || Input::get('privileges') == 1 || Input::get('privileges') == 2): ?>
+				<?php echo $accounts->appends(['privileges' => Input::get('privileges'), 'permissions' => Input::get('permissions')])->render(); ?>
+
+			<?php else: ?>
+				<?php echo $accounts->render(); ?>
+
+			<?php endif; ?>
+		</div>
+	</div>
+
+	<?php else: ?>
+		<div class="col-sm-12 col-md-12">
+			No Records Found.
+		</div>
+	<?php endif; ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

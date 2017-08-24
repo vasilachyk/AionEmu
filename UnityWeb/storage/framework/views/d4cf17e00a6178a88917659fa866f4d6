@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Aion Admin</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
+        <meta name="csrf-param" content="_token" />
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset ('bootstrap/dist/css/bootstrap.min.css')); ?>" />
+        <link rel="stylesheet" href="<?php echo e(asset('css/font-awesome.min.css')); ?>" />
+        <link rel="stylesheet" href="<?php echo e(asset('bootstrap/dist/css/bootstrap-datepicker.min.css')); ?>" />
+        <link rel="stylesheet" href="<?php echo e(asset('css/app.css')); ?>">
+        <script src="<?php echo e(asset('js/vendor/modernizr-2.8.3.min.js')); ?>"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <?php echo $__env->make('navigation.admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <div class="container">
+            <div class="row">
+                <?php echo $__env->yieldContent('content'); ?>
+            </div>
+        </div>
+
+
+        <script src="<?php echo e(asset('js/vendor/jquery-1.11.3.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/bootstrap.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/vendor/bootstrap-datepicker.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/vendor/speakingurl.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/vendor/slugify.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/vendor/jquery-ujs.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/tinymce/tinymce.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/plugins.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/app.js')); ?>"></script>
+    </body>
+</html>

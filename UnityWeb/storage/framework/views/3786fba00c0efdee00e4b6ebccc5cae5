@@ -1,0 +1,9 @@
+<small class="pull-right">
+	<?php if(Settings::general()->vote_type == 'CREDITS'): ?>
+		Current <?php echo e(Settings::general()->credit_name); ?>: <?php echo e(Auth::user()->donate_points); ?>
+
+	<?php else: ?>
+		Current Toll(s): <?php echo e(Auth::user()->toll); ?>
+
+	<?php endif; ?>
+</small>

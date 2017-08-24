@@ -1,0 +1,22 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="page-header">
+		<h4>DONATE <?php echo $__env->make('includes.toll', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></h4>
+	</div>
+
+	<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	<?php if(Settings::payment()->paypal_status == 1): ?>
+		<a class="btn btn-primary" href="<?php echo e(action('DonateController@getPaypal')); ?>">Paypal</a>
+	<?php endif; ?>
+
+	<?php if(Settings::payment()->paymentwall_status == 1): ?>
+		<a class="btn btn-primary" href="<?php echo e(action('DonateController@getPaymentWall')); ?>">Payment Wall</a>
+	<?php endif; ?>
+
+	<?php if(Settings::payment()->super_rewards_status == 1): ?>
+		<a class="btn btn-primary" href="<?php echo e(action('DonateController@getSuperRewards')); ?>">Super Rewards</a>
+	<?php endif; ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

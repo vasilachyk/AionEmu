@@ -1,0 +1,63 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header">
+			<h3>LOGS / PAYMENTWALL</h3>
+		</div>
+
+		<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<?php echo $__env->make('includes.crumbs-logs', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<div class="row">
+			<div class="col-sm-4 mbt pull-right text-right">
+				<form action="<?php echo e(action('Admin\LogController@getPaymentWall')); ?>" method="GET">
+					<div class="form-inline">
+						<input type="text" name="account" value="<?php echo e(Input::get('account')); ?>" placeholder="Search by account" class="form-control">
+						<input type="submit" value="Search" class="btn btn-primary">
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<?php if( ! $payments->isEmpty()): ?>
+			<table class="table  ">
+				<thead>
+					<tr>
+						<th>Transaction ID</th>
+						<th>Account</th>
+						<th>Amount</th>
+						<th>Time</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<?php foreach($payments as $payment): ?>
+						<tr>
+							<td><?php echo e($payment->transaction_id); ?></td>
+							<td><a href="<?php echo e(action('Admin\AccountController@index', ['accountid' => $payment->account_id])); ?>" target="_blank"><?php echo e($payment->account_name); ?></a></td>
+							<td><?php echo e($payment->amount); ?></td>
+							<td><?php echo e($payment->time); ?></td>
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+			</table>
+
+			<div class="pull-right">
+				<?php if(! empty(Input::get('account'))): ?>
+					<?php echo $payments->appends(['account' => Input::get('account')])->render(); ?>
+
+				<?php else: ?>
+					<?php echo $payments->render(); ?>
+
+				<?php endif; ?>
+			</div>
+		<?php else: ?>
+			No donations yet.
+		<?php endif; ?>
+
+	</div>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

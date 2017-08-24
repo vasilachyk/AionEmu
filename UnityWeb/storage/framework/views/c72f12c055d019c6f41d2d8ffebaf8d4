@@ -1,0 +1,13 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="page-header"><h4><?php echo e($news->title); ?> <label class="btn btn-info btn-xs pull-right"><?php echo e($news->catTitle); ?></label></h4></div>
+
+	<div>
+		<?php echo $news->content; ?>
+
+	</div>
+
+	<div><small><i>Created By: <?php echo e($news->createdby_name); ?></i></small></div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

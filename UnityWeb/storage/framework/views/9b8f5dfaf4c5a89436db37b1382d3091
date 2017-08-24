@@ -1,0 +1,67 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header">
+			<h3>Tools / Send Item <br> <small>This will create the item and send it to the player via express mail.</small></h3>
+		</div>
+
+
+		<div class="col-sm-6">
+			<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+			<form action="<?php echo e(action('Admin\ToolsController@postSendItem')); ?>" method="POST">
+				<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+				<div class="form-group">
+					<label>Player Name</label>
+					<input type="text" name="player" class="form-control" value="<?php echo e(old('player')); ?>">
+				</div>
+
+				<div class="form-group">
+					<label>Item ID</label>
+					<input type="text" name="item_id" class="form-control" value="<?php echo e(old('item_id')); ?>">
+				</div>
+
+				<div class="form-group">
+					<label>Quantity</label>
+					<input type="text" name="quantity" class="form-control" value="<?php echo e(old('quantity')); ?>">
+				</div>
+
+				<div class="form-group">
+					<label>Enchant</label>
+					<input type="text" name="enchant" class="form-control" value="<?php echo e(old('enchant')); ?>">
+				</div>
+
+				<div class="form-group">
+					<label>Temperance</label>
+					<input type="text" name="temperance" class="form-control" value="<?php echo e(old('temperance')); ?>">
+				</div>
+
+				<div class="form-group">
+					<label>Amplify</label>
+					<select name="amplify" class="form-control">
+						<option value="-1">-- Select Option --</option>
+						<option value="0">No</option>
+						<option value="1">Yes</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>Stackable</label>
+					<select name="stackable" class="form-control">
+						<option value="-1">-- Select Option --</option>
+						<option value="0">No</option>
+						<option value="1">Yes</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<input type="submit" name="submit" value="Send Item" class="btn btn-primary">
+				</div>
+			</form>
+		</div>
+
+
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,87 @@
+<?php $__env->startSection('content'); ?>
+
+<section class="content-wrap">
+    <div class="iplay-banner banner-top iplay-banner-parallax small">
+        <div class="image" style="background-image: url('<?php echo e(asset ('images/legionary.jpg')); ?>')"></div>
+
+            <div class="info">
+                <div>
+                    <div class="container">
+                        <h1>Aion Online <br>Legionary</h1>
+                        <em>"Legion Information"</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container iplay-content">
+
+            <?php if( ! empty($legion)): ?>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Brigade General</th>
+                        <th>Level</th>
+                        <th>AP</th>
+                        <th>Race</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><?php echo e($legion->name); ?></td>
+                        <td><a href="<?php echo e(action('HomeController@player', $legion->playerid)); ?>"><?php echo e($legion->players_name); ?></a></td>
+                        <td><?php echo e($legion->level); ?></td>
+                        <td><?php echo e($legion->contribution_points); ?></td>
+                        <td><?php echo e($legion->race); ?></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="page-header"><h4>LEGION MEMBERS</h4></div>
+
+            <?php if( ! $members->isEmpty()): ?>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Class</th>
+                        <th>Sex</th>
+                        <th>Level</th>
+                        <th>Title</th>
+                        <th>Location</th>
+                        <th>Rank</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach($members as $index => $member): ?>
+                    <tr>
+                        <td><?php echo e($index + 1); ?></td>
+                        <td><a href="<?php echo e(action('HomeController@player', $member->id)); ?>"><?php echo e($member->name); ?></a></td>
+                        <td><?php echo char_class($member->player_class); ?></td>
+                        <td><?php echo char_gender($member->gender); ?></td>
+                        <td><?php echo char_exptolevel($member->exp); ?></td>
+                        <td><?php echo char_title($member->title_id); ?></td>
+                        <td><?php echo world_location($member->world_id); ?></td>
+                        <td><?php echo e($member->rank); ?></td>
+                        <td><?php echo char_online($member->online); ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <?php else: ?>
+            No Members
+            <?php endif; ?>
+
+            <?php else: ?>
+            Legion not found.
+            <?php endif; ?>
+    </div>
+</section>
+<?php echo $__env->make('footer.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

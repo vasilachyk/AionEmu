@@ -1,0 +1,7 @@
+<?php if(Settings::general()->donate_type == 'CREDITS'): ?>
+    Current <?php echo e(Settings::general()->credit_name); ?>: <?php echo e(Auth::user()->donate_points); ?>
+
+<?php else: ?>
+    Current I-Coin(s): <?php echo e(Auth::user()->toll); ?>
+
+<?php endif; ?>

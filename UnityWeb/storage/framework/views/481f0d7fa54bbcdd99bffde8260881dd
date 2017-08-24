@@ -1,0 +1,8 @@
+<ol class="breadcrumb">
+  <?php /* <li><a href="<?php echo e(action('RankingController@getIndex')); ?>">Players</a></li> */ ?>
+  <li><a href="<?php echo e(action('RankingController@getAbyss')); ?>">Abyss</a></li>
+  <li><a href="<?php echo e(action('RankingController@getGp')); ?>">GP</a></li>
+  <li><a href="<?php echo e(action('RankingController@getAp')); ?>">AP</a></li>
+  <li><a href="<?php echo e(action('RankingController@getLegions')); ?>">Legions</a></li>
+  <li><a href="<?php echo e(action('RankingController@getKinah')); ?>">Kinah</a></li>
+</ol>

@@ -1,0 +1,50 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header"><h3>Page Create</h3></div>
+
+		<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	</div>
+
+	<form action="<?php echo e(action('Admin\PageController@store')); ?>" method="POST">
+		<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+
+		<div class="col-sm-12 col-md-4">
+			<div class="form-group">
+				<label>Title</label>
+				<input type="text" name="title" class="form-control" value="<?php echo e(old('title')); ?>" id="slug-source">
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-4">
+			<div class="form-group">
+				<label>Slug</label>
+				<input type="text" name="slug" class="form-control" value="<?php echo e(old('slug')); ?>" id="slug-target" readonly="readonly">
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-4">
+			<div class="form-group">
+				<label>Status</label>
+				<select name="status" class="form-control">
+					<option value="-1">-- Select Status --</option>
+					<option value="0" <?php echo e(be_selected(old('status'), '0')); ?>>Deactivated</option>
+					<option value="1" <?php echo e(be_selected(old('status'), '1')); ?>>Activated</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-12">
+			<div class="form-group">
+				<label>Content</label>
+				<textarea id="textarea" name="content"><?php echo e(old('content')); ?></textarea>
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-12">
+			<input type="submit" value="Create Page" class="btn btn-primary pull-right">
+		</div>
+	</form>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

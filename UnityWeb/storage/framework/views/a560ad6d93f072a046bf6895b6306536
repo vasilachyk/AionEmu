@@ -1,0 +1,39 @@
+<?php $__env->startSection('content'); ?>
+
+    <div class="hero">
+        <div class="hero-content">
+            <p>Aion Genesis is a brand new private server since january 2015 located in Thailand ready to explore and provide a better gameplay experience for you!.</p>
+            <p>4.9 version - Stigma skills retail like system, 1v1/FFA with AP/GP rewards, Plumes with custom stats, Vote system (300 credits per vote, UNLIMITED VOTING NO IP BLOCK) Donate system, Working Webshop, No Xform, Free consumables, max crafting skills, active/friendly staff and friendly community</p>
+        </div>
+    </div>
+
+    <div class="btngroup">
+        <div class="crack1">
+            <a href="<?php echo e(action('Auth\AuthController@getRegister')); ?>"><img  class="btn-register" src="<?php echo e(asset('img/trans.png')); ?>" /></a>
+        </div>
+      
+        <div class="crack2">
+            <a href="<?php echo e(action('HomeController@download')); ?>"><img  class="btn-download" src="<?php echo e(asset('img/trans.png')); ?>" /></a>
+        </div>
+    </div>
+
+    <div class="neu">
+        <div class="neutop"></div>
+        <div class="neucontent">
+        	<?php if( ! $news->isEmpty()): ?>
+        		<?php foreach($news as $content): ?>
+	            <div class="ncc">
+	                <div class="nct"><a href="<?php echo e(action('NewsController@getNews', [$content->id, $content->slug])); ?>"><?php echo e($content->title); ?></a></div>
+	                <div class="ncd"><?php echo e(to_human_date($content->created_at)); ?></div>
+	            </div>
+            	<?php endforeach; ?>
+            <?php else: ?>
+            	No news available.
+            <?php endif; ?>
+        </div>
+        <div class="neubtm"></div>
+    </div>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

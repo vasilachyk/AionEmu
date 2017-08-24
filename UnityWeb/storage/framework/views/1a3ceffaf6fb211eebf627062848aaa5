@@ -1,0 +1,51 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="col-sm-12 col-md-12">
+		<div class="page-header"><h3>News Create</h3></div>
+
+		<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	</div>
+
+	<form action="<?php echo e(action('Admin\NewsController@store')); ?>" method="POST">
+		<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+
+		<div class="col-sm-12 col-md-4">
+			<div class="form-group">
+				<label>Title</label>
+				<input type="text" name="title" class="form-control" value="<?php echo e(old('title')); ?>" id="slug-source">
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-4">
+			<div class="form-group">
+				<label>Slug</label>
+				<input type="text" name="slug" class="form-control" value="<?php echo e(old('slug')); ?>" id="slug-target" readonly="readonly">
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-4">
+			<div class="form-group">
+				<label>Category</label>
+				<select name="category" class="form-control">
+					<option value="-1">-- Select Category --</option>
+					<?php foreach($newsCat as $cat): ?>
+						<option value="<?php echo e($cat->id); ?>"><?php echo e($cat->title); ?></option>
+					<?php endforeach; ?>
+				</select>
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-12">
+			<div class="form-group">
+				<label>Content</label>
+				<textarea name="content" id="textarea"><?php echo e(old('content')); ?></textarea>
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-md-12">
+			<input type="submit" value="Create News" class="btn btn-primary pull-right">
+		</div>
+	</form>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,25 @@
+<?php $__env->startSection('content'); ?>
+
+<section class="content-wrap full iplay-404">
+    <!-- Banner -->
+    <div class="iplay-banner banner-top">
+        <div class="image" style="background-image: url('<?php echo e(asset ('images/404.jpg')); ?>')"></div>
+
+        <div class="info">
+            <div>
+                <div class="container align-center">
+                    <h2 class="h1">404</h2>
+                    <h3>Page Not Found ;(</h3>
+                    
+                    <div class="pull-center">
+                        <a href="/"><button class="btn btn-primary">
+                        Go Home</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

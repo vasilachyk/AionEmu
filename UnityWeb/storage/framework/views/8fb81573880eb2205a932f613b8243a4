@@ -1,0 +1,50 @@
+<?php $__env->startSection('content'); ?>
+
+	<section class="hero hero-panel" style="background-image: url(<?php echo e(asset('images/default-backgorund.jpg')); ?>);">
+		<div class="hero-bg"></div>
+		<div class="container">
+			<h3>History Purchase Items</h3>
+			<p>Account name : <?php echo e(Auth::user()->name); ?></p>
+
+			<div class="alert alert-warning alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				* History <strong>Webshop</strong> Purchase Items.
+			</div>
+
+	<?php echo $__env->make('includes.crumbs-account', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    &nbsp;
+
+	<?php if( ! $weblogs->isEmpty()): ?>
+
+	<table class="table table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>Item</th>
+				<th>Amount</th>
+				<th>Price</th>
+				<th>Enchant</th>
+				<th>Temperance</th>
+				<th>Buy Date</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<?php foreach($weblogs as $weblog): ?>
+			<tr>
+				<td><a href="http://aiondatabase.net/us/item/<?php echo e($weblog->item); ?>" target="_blank"><?php echo e($weblog->item); ?></a></a></td>
+				<td><?php echo e($weblog->amount); ?></td>
+				<td><?php echo e($weblog->price); ?></td>
+				<td><?php echo e($weblog->enchant > 0 ? '+'. $weblog->enchant : 'N/A'); ?></td>
+				<td><?php echo e($weblog->temperance > 0 ? '+'. $weblog->temperance : 'N/A'); ?></td>
+				<td><?php echo e(Carbon::parse($weblog->created_at)->toDayDateTimeString()); ?></td>
+			</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+	<?php else: ?>
+		No log available.
+	<?php endif; ?>
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

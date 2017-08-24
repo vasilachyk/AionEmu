@@ -1,0 +1,8 @@
+<?php if( ! $shopCategory->isEmpty()): ?>
+    <ul class="dropdown-menu">
+        <li><a href="<?php echo e(action('WebshopController@getIndex')); ?>">&rArr; &nbsp;All Category</a></li>
+        <?php foreach($shopCategory as $category): ?>
+            <li><a href="<?php echo e(action('WebshopController@getCategory', $category->slug)); ?>">&rArr; &nbsp;<?php echo e(ucfirst($category->name)); ?></a></li>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>

@@ -1,0 +1,51 @@
+<?php $__env->startSection('content'); ?>
+
+<section class="content-wrap">
+    <div class="iplay-banner banner-top iplay-banner-parallax small">
+        <div class="image" style="background-image: url('<?php echo e(asset ('images/empyrean.jpg')); ?>')"></div>
+
+        <div class="info">
+            <div>
+                <div class="container">
+                    <h1>Aion Online <br>Empyrean Calling's</h1>
+                    <em>"Unstuck Character"</em>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container iplay-content">
+
+	<?php echo $__env->make('includes.crumbs-account', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+         &nbsp;
+
+	<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	<?php if( ! $players->isEmpty()): ?>
+
+	<form class="form-horizontal" action="<?php echo e(action('AccountController@postUnstuck')); ?>" method="POST" data-confirm="Are you sure you want to unstuck this character?">
+		<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+
+		<div class="form-group">
+			<div class="col-sm-8">
+				<select name="player" class="form-control">
+					<option value="-1">-- Select Character --</option>
+					<?php foreach($players as $player): ?>
+						<option value="<?php echo e($player->id); ?>"><?php echo e($player->name); ?></option>
+					<?php endforeach; ?>
+				</select>
+			</div>
+			<div class="col-sm-4">
+				<button type="submit" value="Unstuck" class="btn btn-default db">Unstuck</button>
+			</div>
+		</div>
+	</form>
+	<?php else: ?>
+		You have no characters on this account.
+	<?php endif; ?>
+    </div>
+</section>
+
+<?php echo $__env->make('footer.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

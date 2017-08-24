@@ -1,0 +1,13 @@
+<?php $__env->startSection('content'); ?>
+
+	<div class="page-header">
+		<h4>DONATE / PAYMENTWALL <?php echo $__env->make('includes.toll', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?></h4>
+	</div>
+
+	<?php echo $__env->make('includes.form-messages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+	<?php echo $widget->getHtmlCode(['frameborder' => '0', 'width' => '531', 'height' => '800']); ?>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
